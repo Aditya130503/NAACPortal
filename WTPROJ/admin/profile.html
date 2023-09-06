@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Information Form</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>College Information Form</h1>
+
+        <!-- Section 2.1 - BASIC INFORMATION -->
+        <h2>2.1 BASIC INFORMATION</h2>
+
+        <!-- Section 2.1.1 - Name and Address of the College -->
+        <h3>Name and Address of the College</h3>
+        <label for="college-name">Name</label>
+        <input type="text" id="college-name" name="college-name" required>
+
+        <label for="college-address">Address</label>
+        <input type="text" id="college-address" name="college-address" required>
+
+        <label for="college-city">City</label>
+        <input type="text" id="college-city" name="college-city" required>
+
+        <label for="college-state">State</label>
+        <input type="text" id="college-state" name="college-state" required>
+
+        <label for="college-pin">Pin</label>
+        <input type="text" id="college-pin" name="college-pin" required>
+
+        <label for="college-website">Website</label>
+        <input type="text" id="college-website" name="college-website" required>
+
+        <!-- Section 2.1.2 - Contacts for Communication -->
+        <h3>Contacts for Communication</h3>
+        <label for="contact-designation">Designation</label>
+        <input type="text" id="contact-designation" name="contact-designation" required>
+
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="contact-name" required>
+
+        <label for="contact-telephone">Telephone with STD Code</label>
+        <input type="text" id="contact-telephone" name="contact-telephone" required>
+
+        <label for="contact-mobile">Mobile</label>
+        <input type="text" id="contact-mobile" name="contact-mobile" required>
+
+        <label for="contact-fax">Fax</label>
+        <input type="text" id="contact-fax" name="contact-fax" required>
+
+        <label for="contact-email">Email</label>
+        <input type="text" id="contact-email" name="contact-email" required>
+
+        <!-- Section 2.1.3 - Status of the Institution -->
+        <h3>Status of the Institution</h3>
+        <label for="Status">Institution Status</label>
+        <input type="text" id="Status" name="Status" required>
+         <h3>Type of Institutuion</h3>
+        <label for="gender">By Gender</label>
+        <input type="text" id="instgen" name="instgen" required>
+        <label for="shift">By Shift</label>
+        <input type="text" id="instshift" name="instshift" required>
+        <h3>Recognized Minority institution</h3>
+        <label for="minority">If it is a recognzed minority institution</label>
+        <input type="text" id="minority" name="minority" required>
+        <label>If yes,specify minority status</label>
+        <label for="reli">Religious</label>
+        <input type="text" id="reli" name="reli" required>
+        <label for="ling">Linguistic</label>
+        <input type="text" id="ling" name="ling" required>
+        <label for="ano">Any Other</label>
+        <input type="text" id="ano" name="ano" required>
+        <!-- Section 2.1.6 - Establishment Details -->
+        <h3>2.1.6 Establishment Details</h3>
+        <!-- Add your input fields here -->
+
+        <button type="submit">Submit</button>
+    </div>
+</body>
+</html>
+
