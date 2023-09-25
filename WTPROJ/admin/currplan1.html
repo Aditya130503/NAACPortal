@@ -36,14 +36,11 @@
     </style>
 </head>
 <body>
-    <script>
-        function pro(){
-            window.open('acadeflex.html');
-        }
-    </script>
+
     <div class="form-container">
         <h1>Quality Indicator Framework</h1>
         <label style="font-size: large;">Criterion 1 - Curricular Aspects</label>
+        <form action="acadeflex.html" method="post" enctype="multipart">
         <!-- Section 1.1 - Introduction -->
         <label for="cur">1.1 Curricular Planning and Implementation</label>
         <textarea id="cur" name="cur" rows="4" required></textarea>
@@ -55,7 +52,8 @@
         <input type="text" id="link" name="link">
 
 
-        <button type="submit" onclick="pro()">Next</button>
+        <button type="submit">Next</button>
+    </form>
     </div>
 </body>
 </html>
