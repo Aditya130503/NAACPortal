@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+      include'session.php';
+      include'conn.php';
+?>
 <html>
   <head>
     <title>Admin Login</title>
@@ -30,7 +33,7 @@
       }
       h1 {
       text-align:center;
-      fone-size:18;
+      font-size:18;
       }
       button:hover {
       opacity: 0.8;
@@ -64,7 +67,9 @@
         window.open('adminhome.html');
       }
       else{alert("wrong");}
+
      }
+
    </script> 
   </head>
   <body>
@@ -79,7 +84,7 @@
         <input type="password" placeholder="Enter Password" id="psw" required>
       </div>
       <button type="submit">Login</button>
-      
+      </div>
     </form>
   </body>
 </html>
