@@ -1,28 +1,38 @@
-<?php
-// Check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $curricularPlanning = $_POST['cur'];
-    $additionalInfo = $_FILES['add']; // Assuming you want to store the file name
-    $link = $_POST['link'];
-
-    // Connect to the database (replace with your database credentials)
-
-    $conn = new mysqli('localhost', 'root', '', 'naac');
+<?php $conn = new mysqli('localhost', 'root', '', 'naac');
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Insert data into the database
-    $sql = "INSERT INTO eval_data (curricular_planning, additional_info, link) VALUES ('$curricularPlanning', '$additionalInfo', '$link')";
+                         $curricularPlanning = $_POST['cur'];
+                         $link = $_POST['link'];
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Data added to the database successfully.";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+                        // If submit button is clicked
+                        if (isset($_POST['submit']))
+                        {
+                                          
 
-    $conn->close();
-}
-?>
+                        if (isset($_FILES['pdf_file']['name'])) 
+                        { 
+                        // If the ‘pdf_file’ field has an attachment
+                            $file_name = $_FILES['pdf_file']['name'];
+                            $file_tmp = $_FILES['pdf_file']['tmp_name'];
+                            
+                            // Move the uploaded pdf file into the pdf folder
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+                            // Insert the submitted data from the form into the table
+                            $insertquery = 
+                            "INSERT INTO eval_data(curricular_planning,additional_info,link) VALUES('$curricularPlanning','$file_name','$link')";
+                            
+                            // Execute insert query
+                           if(mysqli_query($conn, $insertquery)){
+                                echo"Success";
+                           };     
+                          
+                        }// end if
+                    }
+                    ?> 
+                    
+                         
+            
+            

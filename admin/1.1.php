@@ -1,5 +1,5 @@
 <?php
-    include'ins.php';
+    include('style.css');
 ?>
 <html lang="en">
 <head>
@@ -45,20 +45,20 @@
 
         
 
-        <form action="ins.php" method="post" enctype="multipart">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
 
         
         <label for="cur">1.1 Curricular Planning and Implementation</label>
         <textarea id="cur" name="cur" rows="4" required></textarea>
 
         
-        <label for="add">Upload Additional information </label><br>
-        <input type="file" id="add" name="add">
+        <label for="pdf_file">Upload Additional information </label><br>
+        <input type="file" id="addi" name="pdf_file">
         <label for="link">Provide Link for Additional information </label>
         <input type="text" id="link" name="link">
 
 
-        <button type="submit" onclick="1.2.html">Next</button>
+        <button type="submit" name="submit">Next</button>
     </form>
     </div>
 </body>
