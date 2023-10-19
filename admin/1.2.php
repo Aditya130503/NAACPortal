@@ -43,7 +43,7 @@
 </head>
 <body>
     <div class="form-container">
-        <form action="currenrich.html" method="post" enctype="multipart/form-data">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>1.2 Academic Flexibility</h1>
 
         <!-- Section 2.1 - BASIC INFORMATION -->
@@ -58,25 +58,22 @@
 
         <!-- Section 2.1.1 - Name and Address of the College -->
         <h3>1.2.2 Percentage of students enrolled in Certificate/ Add-on/Value added programs as against the total number of students during the last five years</h3>
-        <input type="text" id="vac" name="vac" required>
+        <input type="text" id="vac" name="pvac" required>
 
           <label>1.2.2.1 Number of students enrolled in subject related Certificate/ Add-on/Value added programs year wise during last five year</label>
-        <label>2022-23</label><input type="text">
-        <label>2021-22</label><input type="text">
-        <label>2020-21</label><input type="text">
-        <label>2019-20</label><input type="text">
-        <label>2018-19</label><input type="text">
+        <label>2022-23</label><input type="text" name="22-23">
+        <label>2021-22</label><input type="text" name="21-22">
+        <label>2020-21</label><input type="text" name="20-21">
+        <label>2019-20</label><input type="text" name="19-20">
+        <label>2018-19</label><input type="text" name="18-19">
 
         <label for="supp1">Upload supporting document </label><br>
         <input type="file" id="supp1" name="supp1">
 
         <label for="instdata1">Institutional data in the prescribed format </label><br>
         <input type="file" id="instdata1" name="instdata1">
-
-
-
         
-        <button type="submit">Submit</button>
+        <button type="submit" name="sub">Submit</button>
     </form>
     </div>
 </body>

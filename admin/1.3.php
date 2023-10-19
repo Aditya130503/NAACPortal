@@ -43,12 +43,13 @@
 </head>
 <body>
     <div class="form-container">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>1.3  Curriculum Enrichment</h1>
 
-        <!-- Section 2.1 - BASIC INFORMATION -->
+        
         <h2>1.3.1 Institution integrates crosscutting issues relevant to Professional Ethics, Gender, Human
 Values, Environment and Sustainability into the Curriculum</h2>
-        <input type="text" id="vac" name="vac" required>
+        <input type="text" id="pec" name="pec" required>
 
         <label for="add2">Upload Additional information </label><br>
         <input type="file" id="add2" name="add2">
@@ -61,7 +62,7 @@ Values, Environment and Sustainability into the Curriculum</h2>
         <input type="text" id="intern" name="intern" required>
 
           <label>1.3.2.1 Number of students undertaking project work/field work / internships</label>
-          <input type="text" id="intern" name="intern" required>
+          <input type="text" id="intern1" name="intern1" required>
         
 
         <label for="add3"link3>Upload supporting document </label><br>
@@ -71,8 +72,10 @@ Values, Environment and Sustainability into the Curriculum</h2>
         <input type="file" id="instdata2" name="instdata2">
 
         
-        <button formaction="1.4.html">Submit</button>
+        <button name="submit1">Submit</button>
+        </form>
     </div>
+
 </body>
 </html>
 

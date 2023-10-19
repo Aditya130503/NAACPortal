@@ -73,9 +73,10 @@
 
 <body>
     <div class="form-container">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>2 Teaching-learning and Evaluation</h1>
         <h2>2.1 Student Enrollment and Profile</h2>
-            <input type="text" id="vac" name="vac" required>
+            
 
             <h2>2.1.1 Enrolment percentage
 </h2>
@@ -91,11 +92,11 @@
                         <td class="year">2017-18</td>
                     </tr>
                     <tr>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="21_22" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="20_21"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="19_20"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="18_19"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="17_18"placeholder="Enter a number"></td>
                     </tr>
                 </table>
                 <br>
@@ -110,18 +111,18 @@
                         <td class="year">2017-18</td>
                     </tr>
                     <tr>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2021_22" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2020_21"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2019_20"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2018_19"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2017_18"placeholder="Enter a number"></td>
                     </tr>
                 </table>
-            <label for="add3"link3>Upload supporting document </label><br>
-            <input type="file" id="add3" name="add3">
+            <label for="add4">Upload supporting document </label><br>
+            <input type="file" id="add4" name="add4">
     
-            <label for="instdata2">Institutional data in the prescribed format </label><br>
-            <input type="file" id="instdata2" name="instdata2">
+            <label for="instdata3">Institutional data in the prescribed format </label><br>
+            <input type="file" id="instdata3" name="instdata3">
 
             <h2>2.1.2 Percentage of seats filled against seats reserved for various categories (SC, ST, OBC,
 Divyangjan, etc. as per applicable reservation policy during the last five years (Exclusive of
@@ -140,11 +141,11 @@ years </h2>
                         <td class="year">2017-18</td>
                     </tr>
                     <tr>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2021-22"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2020-21"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2019-20"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2018-19"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="2017-18"placeholder="Enter a number"></td>
                     </tr>
                 </table>
                 <h2>2.1.2.2 Number of seats earmarked for reserved category as per GOI/ State Govt rule year wise
@@ -158,28 +159,29 @@ during the last five years</h2>
                         <td class="year">2017-18</td>
                     </tr>
                     <tr>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nos"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nos1"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nos2"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="no3"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nos4"placeholder="Enter a number"></td>
                     </tr>
                 </table>
 
-                <label for="add3"link3>Upload supporting document </label><br>
-            <input type="file" id="add3" name="add3">
+                <label for="add5"link3>Upload supporting document </label><br>
+            <input type="file" id="add5" name="add5">
     
-            <label for="instdata2">Institutional data in the prescribed format </label><br>
-            <input type="file" id="instdata2" name="instdata2">
+            <label for="instdata4">Institutional data in the prescribed format </label><br>
+            <input type="file" id="instdata4" name="instdata4">
 
 
             <h1>Student Teacher Ratio</h1>
                 <h2>2.2.1 Student – Full time Teacher Ratio
 (Data for the latest completed academic year</h2>
-                <input type="text" id="vac" name="vac" required>
+                <input type="text" id="str" name="str" required>
     
                
-            <button formaction="2.3.html">Submit</button>
+            <button name="submit3.php">Submit</button>
+        </form>
     </div>
  </body>
 </html>
