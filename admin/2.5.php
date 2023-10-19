@@ -40,20 +40,20 @@
     <div class="form-container">
         <h1>Evaluation Process and Reforms</h1>
         
-        <form action="2.6.html" method="post" enctype="multipart">
-        <!-- Section 1.1 - Introduction -->
-        <label for="cur">2.5.1 Mechanism of internal/ external assessment is transparent and the grievance redressal system
+        <form action="ins.php" method="post" enctype="multipart/form-data">
+        
+        <label for="epr">2.5.1 Mechanism of internal/ external assessment is transparent and the grievance redressal system
 is time- bound and efficient</label>
         <textarea id="epr" name="epr" rows="4" required></textarea>
 
-        <!-- Section 1.2 - SWOC -->
-        <label for="add">Upload Additional information </label><br>
-        <input type="file" id="add" name="add">
-        <label for="link">Provide Link for Additional information </label>
-        <input type="text" id="link" name="link">
+        
+        <label for="add9">Upload Additional information </label><br>
+        <input type="file" id="add9" name="add9">
+        <label for="link4">Provide Link for Additional information </label>
+        <input type="text" id="link4" name="link4">
 
 
-        <button type="submit">Next</button>
+        <button name="submit6">Next</button>
     </form>
     </div>
 </body>

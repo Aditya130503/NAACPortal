@@ -39,20 +39,20 @@
 
     <div class="form-container">
         <h2>Teaching-Learning Process</h2>
-        <form action="2.4.html" method="post" enctype="multipart">
-        <!-- Section 1.1 - Introduction -->
-        <label for="cur">2.3.1 Student centric methods, such as experiential learning, participative learning and problem
+        <form action="ins.php" method="post" enctype="multipart/form-data">
+        
+        <label for="tl">2.3.1 Student centric methods, such as experiential learning, participative learning and problem
 solving methodologies are used for enhancing learning experiences using ICT tools</label>
         <textarea id="tl" name="tl" rows="4" required></textarea>
 
-        <!-- Section 1.2 - SWOC -->
-        <label for="add">Upload Additional information </label><br>
-        <input type="file" id="add" name="add">
-        <label for="link">Provide Link for Additional information </label>
-        <input type="text" id="link" name="link">
+        
+        <label for="add6">Upload Additional information </label><br>
+        <input type="file" id="add6" name="add6">
+        <label for="link3">Provide Link for Additional information </label>
+        <input type="text" id="link3" name="link3">
 
 
-        <button type="submit">Next</button>
+        <button type="submit4">Next</button>
     </form>
     </div>
 </body>

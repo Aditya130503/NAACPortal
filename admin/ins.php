@@ -152,6 +152,136 @@ if (isset($_POST['submit3']))
                        }
                    }                   
 
+if (isset($_POST['submit4']))
+                        {     $teach = $_POST['tl'];
+                              $link3 = $_POST['link3'];
+                                
+                        
+                       if (isset($_FILES['add6']['name']))
+                       {
+                         $file_name = $_FILES['add6']['name'];
+                            $file_tmp = $_FILES['add6']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
+                       $insertquery = 
+                            "INSERT INTO teach_learn_proce(tl,additional,link) VALUES('$teach','$file_name','$link3')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:2.4.php");
+                           };          
+                       }
+                   }
+
+if (isset($_POST['submit5']))
+                        {      $pt = $_POST['pt'];
+                               $sp=$_POST['sp'];
+                               $sp1=$_POST['sp1'];
+                               $sp2=$_POST['sp2'];
+                               $sp3=$_POST['sp3'];
+                               $sp4=$_POST['sp4'];
+                               $s=$_POST['s'];
+                               $nsp=$_POST['nsp'];
+                               $nsp1=$_POST['nsp1'];
+                               $nsp2=$_POST['nsp2'];
+                               $nsp3=$_POST['nsp3'];
+                               $nsp4=$_POST['nsp4'];
+                                                        
+                        if (isset($_FILES['add7']['name'])&&isset($_FILES['add8']['name'])&&isset($_FILES['instdata5']['name'])) 
+                        { 
+                       
+                            $file_name = $_FILES['add7']['name'];
+                            $file_tmp = $_FILES['add7']['tmp_name'];
+                            
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+                            $fil_name = $_FILES['add8']['name'];
+                            $fil_tmp = $_FILES['add8']['tmp_name'];
+                            
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+                            $fi_name = $_FILES['instdata5']['name'];
+                            $fi_tmp = $_FILES['instdata5']['tmp_name'];
+                            
+                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+                            $insertquery = 
+                            "INSERT INTO tpq(ftt,nsp_21_22,nsp_20_21,nsp_19_20,nsp_18_19,nsp_17_18,supp_doc,pfts,nfts_21_22,nfts_20_21,nfts_19_20,nfts_18_19,nfts_17_18,nfts_supp,inst_data) VALUES('$pt','$sp','$sp1','$sp2','$sp3','$sp4','$file_name','$s','$nsp','$nsp1','$nsp2','$nsp3','$nsp4','$fil_name','$fi_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:2.5.php");
+                           };     
+                          }
+                         }
+
+if (isset($_POST['submit6']))
+                        {     $epr = $_POST['epr'];
+                              $link4 = $_POST['link4'];
+                                
+                        
+                       if (isset($_FILES['add9']['name']))
+                       {
+                         $file_name = $_FILES['add9']['name'];
+                            $file_tmp = $_FILES['add9']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
+                       $insertquery = 
+                            "INSERT INTO eval_proce(epr,additional,link) VALUES('$epr','$file_name','$link4')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:2.6.php");
+                           };          
+                       }
+                   }
+
+if (isset($_POST['submit7']))
+                        {     $splo = $_POST['splo'];
+                              $link5 = $_POST['link5'];
+                              $ppsd = $_POST['ppsd'];
+                              $pass = $_POST['pass'];
+                              $pass1 = $_POST['pass1'];
+                              $pass2 = $_POST['pass2'];
+                              $pass3 = $_POST['pass3'];
+                              $pass4 = $_POST['pass4'];
+                              $appear = $_POST['appear'];
+                              $appear1 = $_POST['appear1'];
+                              $appear2 = $_POST['appear2'];
+                              $appear3 = $_POST['appear3'];
+                              $appear4 = $_POST['appear4'];
+                                
+                        
+                       if (isset($_FILES['add10']['name'])&&isset($_FILES['add11']['name'])&&isset($_FILES['instdata6']['name']))
+                       {
+                         $file_name = $_FILES['add10']['name'];
+                            $file_tmp = $_FILES['add10']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
+                            $fil_name = $_FILES['add11']['name'];
+                            $fil_tmp = $_FILES['add11']['tmp_name'];
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+
+                            $fi_name = $_FILES['instdata6']['name'];
+                            $fi_tmp = $_FILES['instdata6']['tmp_name'];
+                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+
+                       $insertquery = 
+                            "INSERT INTO stud_perf_lear_out(poco,additional,link,ppsd,pass_21_22,pass_20_21,pass_19_20,pass_18_19,pass_17_18,appear_21_22,appear_20_21,appear_19_20,appear_18_19,appear_17_18,supp_doc,inst_data) VALUES('$splo','$file_name','$link5','$ppsd','$pass','$pass1','$pass2','$pass3','$pass4','$appear','$appear1','$appear2','$appear3','$appear4','$fil_name','$fi_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:2.7.php");
+                           };          
+                       }
+                   }
+
+if (isset($_POST['submit8']))
+                        {     $oss = $_POST['oss'];                      
+                        
+                       if (isset($_FILES['add12']['name']))
+                       {
+                         $file_name = $_FILES['add12']['name'];
+                            $file_tmp = $_FILES['add12']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
+                       $insertquery = 
+                            "INSERT INTO stud_sati_sur(osss,db) VALUES('$oss','$file_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:3.1.php");
+                           };          
+                       }
+                   }
+
 ?> 
                     
                          

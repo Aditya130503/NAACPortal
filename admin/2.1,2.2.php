@@ -162,7 +162,7 @@ during the last five years</h2>
                         <td class="input"><input type="number" name="nos"placeholder="Enter a number"></td>
                         <td class="input"><input type="number" name="nos1"placeholder="Enter a number"></td>
                         <td class="input"><input type="number" name="nos2"placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" name="no3"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nos3"placeholder="Enter a number"></td>
                         <td class="input"><input type="number" name="nos4"placeholder="Enter a number"></td>
                     </tr>
                 </table>
@@ -180,7 +180,7 @@ during the last five years</h2>
                 <input type="text" id="str" name="str" required>
     
                
-            <button name="submit3.php">Submit</button>
+            <button name="submit3">Submit</button>
         </form>
     </div>
  </body>

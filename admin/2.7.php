@@ -40,18 +40,17 @@
     <div class="form-container">
         <h1>2.7 Student Satisfaction Survey</h1>
         
-        <form action="3.1.html" method="post" enctype="multipart">
-        <!-- Section 1.1 - Introduction -->
+        <form action="ins.php" method="post" enctype="multipart/form-data">
+        
         <label for="oss">2.7.1 Online student satisfaction survey regarding teaching learning process</label>
         <input type="text" id="oss" name="oss"  required></input>
 
-        <!-- Section 1.2 - SWOC -->
-        <label for="add">Upload  database of all students on roll </label><br>
-        <input type="file" id="add" name="add">
+        <label for="add12">Upload  database of all students on roll </label><br>
+        <input type="file" id="add12" name="add12">
 
 
 
-        <button type="submit">Next</button>
+        <button type="submit8">Next</button>
     </form>
     </div>
 </body>

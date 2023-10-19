@@ -38,19 +38,18 @@
 <body>
 
     <div class="form-container">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>2.6 Student Performance and Learning Outcomes</h1>
         
-        <form action="2.7.html" method="post" enctype="multipart">
-        <!-- Section 1.1 - Introduction -->
         <label for="splo">2.6.1 Programme Outcomes (POs) and Course Outcomes (COs) for all Programmes offered by the
 institution are stated and displayed on website and attainment of POs and COs are evaluated</label>
         <textarea id="splo" name="splo" rows="4" required></textarea>
 
-        <!-- Section 1.2 - SWOC -->
-        <label for="add">Upload Additional information </label><br>
-        <input type="file" id="add" name="add">
+        
+        <label for="add10">Upload Additional information </label><br>
+        <input type="file" id="add10" name="add10">
         <label for="link">Provide Link for Additional information </label>
-        <input type="text" id="link" name="link">
+        <input type="text" id="link5" name="link5">
 
 <label for="ppsd">2.6.2 Pass percentage of Students during last five year</label>
         <input type="text" id="ppsd" name="ppsd"  required></input>
@@ -67,11 +66,11 @@ last five years
                         <td class="year">2017-18</td>
                     </tr>
                     <tr>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="pass"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="pass1"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="pass2"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="pass3"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="pass4"placeholder="Enter a number"></td>
                     </tr>
                 </table>
                 <br>
@@ -86,20 +85,20 @@ the last five years
                         <td class="year">2017-18</td>
                     </tr>
                     <tr>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="appear"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="appear1"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="appear2"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="appear3"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="appear4"placeholder="Enter a number"></td>
                     </tr>
                 </table>
                 <br>
-                <label for="add3"link3>Upload supporting document </label><br>
-            <input type="file" id="add3" name="add3">
+                <label for="add11">Upload supporting document </label><br>
+            <input type="file" id="add11" name="add11">
     
-            <label for="instdata2">Institutional data in the prescribed format </label><br>
-            <input type="file" id="instdata2" name="instdata2">
-        <button type="submit">Next</button>
+            <label for="instdata6">Institutional data in the prescribed format </label><br>
+            <input type="file" id="instdata6" name="instdata6">
+        <button type="submit7">Next</button>
     </form>
     </div>
 </body>
