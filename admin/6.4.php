@@ -42,21 +42,22 @@
 </head>
 <body>
     <div class="form-container">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>6.4 Financial Management and Resource Mobilization</h1>
 
-        <!-- Section 2.1 - BASIC INFORMATION -->
-        <h2>6.4 Financial Management and Resource Mobilization6.4.1 Institution has strategies for mobilization and optimal utilization of resources and funds from
+        <h2>6.4.1 Institution has strategies for mobilization and optimal utilization of resources and funds from
             various sources (government/ nongovernment organizations) and it conducts financial audits
             regularly (internal and external)</h2>
-        <input type="text" id="vac" name="vac" required>
+        <textarea id="fmrm" name="fmrm" rows="4" required></textarea>
 
-        <label for="add2">Upload Additional information </label><br>
-        <input type="file" id="add2" name="add2">
+        <label for="add42">Upload Additional information </label><br>
+        <input type="file" id="add42" name="add42">
 
-        <label for="link2">Provide link for additional information </label><br>
-        <input type="text" id="link2" name="link2">
+        <label for="link12">Provide link for additional information </label><br>
+        <input type="text" id="link12" name="link12">
 
-        <button formaction="currenrich.html">Submit</button>
+        <button name="submit25">Submit</button>
+    </form>
     </div>
 </body>
 </html>

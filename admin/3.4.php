@@ -40,22 +40,23 @@
     <div class="form-container">
         <h1>3.4 Extension Activities</h1>
         
-        <form action="3.5.html" method="post" enctype="multipart">
+        <form action="ins.php" method="post" enctype="multipart">
         <!-- Section 1.1 - Introduction -->
         <label for="ea">3.4.1 Extension activities are carried out in the neighborhood community, sensitizing students to
 social issues, for their holistic development, and impact thereof during the last five years</label>
         <textarea id="ea" name="ea" rows="4"required></textarea> 
 
-   <label for="now">3.3.1.1 Number of research papers in the Journals notified on UGC CARE year wise during the last
+   <label>3.3.1.1 Number of research papers in the Journals notified on UGC CARE year wise during the last
 five years</label>
+<input type="text" name="nrp">
 
 
 
         <!-- Section 1.2 - SWOC -->
-        <label for="add">Upload Additional information </label><br>
-        <input type="file" id="add" name="add">
+        <label for="add18">Upload Additional information </label><br>
+        <input type="file" id="add18" name="add18">
         <label for="add">Provide Link for Additional information </label><br>
-        <input type="file" id="add" name="add">
+        <input type="text" name="link8">
 
         <label for="nep">3.4.3 Number of extension and outreach programs conducted by the institution through
 NSS/NCC/Red cross/YRC etc., (including the programmes such as Swachh Bharat, AIDS awareness,
@@ -77,23 +78,23 @@ wise during the last five yearss
                         <td class="year">2017-18</td>
                     </tr>
                     <tr>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
-                        <td class="input"><input type="number" placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nep1"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nep2"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nep3"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nep4"placeholder="Enter a number"></td>
+                        <td class="input"><input type="number" name="nep5"placeholder="Enter a number"></td>
                     </tr>
                 </table>
                 <br>
-                <label for="add3"link3>Upload supporting document </label><br>
-            <input type="file" id="add3" name="add3">
+                <label for="add19"link3>Upload supporting document </label><br>
+            <input type="file" id="add19" name="add19">
     
-            <label for="instdata2">Institutional data in the prescribed format </label><br>
-            <input type="file" id="instdata2" name="instdata2">
+            <label for="instdata10">Institutional data in the prescribed format </label><br>
+            <input type="file" id="instdata10" name="instdata10">
 
 
 
-        <button type="submit">Next</button>
+        <button type="submit" name="submit12">Next</button>
     </form>
     </div>
 </body>

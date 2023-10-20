@@ -42,21 +42,23 @@
 </head>
 <body>
     <div class="form-container">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>6.1  Institutional Vision and Leadership</h1>
 
         <!-- Section 2.1 - BASIC INFORMATION -->
         <h2>6.1.1 The governance and leadership is in accordance with vision and mission of the institution and it
             is visible in various institutional practices such as decentralization and participation in the
             institutional governance</h2>
-        <input type="text" id="vac" name="vac" required>
+        <textarea id="vm" name="vm"rows="4" required></textarea>
 
-        <label for="add2">Upload Additional information </label><br>
-        <input type="file" id="add2" name="add2">
+        <label for="add36">Upload Additional information </label><br>
+        <input type="file" id="add36" name="add36">
 
-        <label for="link2">Provide link for additional information </label><br>
-        <input type="text" id="link2" name="link2">
+        <label for="link10">Provide link for additional information </label><br>
+        <input type="text" id="link10" name="link10">
 
-        <button formaction="currenrich.html">Submit</button>
+        <button name="submit22">Submit</button>
+    </form>
     </div>
 </body>
 </html>

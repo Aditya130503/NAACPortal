@@ -72,19 +72,21 @@
 </head>
  <body>
     <div class="form-container">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>5.4 Alumni Engagement</h1>
-        <h2>6.3.1 The institution has effective welfare measures and Performance Appraisal System for teaching
-            and non-teaching staff</h2>
-        <input type="text" id="vac" name="vac" required>
+        <h2>5.4.1 There is a registered Alumni Association that contributes significantly to the development of
+the institution through financial and/or other support services</h2>
+        <textarea id="aa" name="aa" rows="4" required></textarea>
         
             
-        <label for="add3"link3>Upload supporting document </label><br>
-        <input type="file" id="add3" name="add3">
+        <label for="add35">Upload supporting document </label><br>
+        <input type="file" id="add35" name="add35">
 
         
-        <label for="instdata2">Institutional data in the prescribed format </label><br>
-        <input type="text" id="instdata2" name="instdata2">
-        <button formaction="currenrich.html">Submit</button>
+        <label for="instdata21">Institutional data in the prescribed format </label><br>
+        <input type="file" id="instdata21" name="instdata21">
+        <button name="submit21">Submit</button>
+    </form>
     </div>
  </body>
 </html>

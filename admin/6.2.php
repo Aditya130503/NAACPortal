@@ -42,36 +42,38 @@
 </head>
 <body>
     <div class="form-container">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>6.2 Strategy Development and Deployment</h1>
 
         <!-- Section 2.1 - BASIC INFORMATION -->
         <h2>6.2.1 The functioning of the institutional bodies is effective and efficient as visible from policies,
             administrative setup, appointment and service rules, procedures, deployment of institutional
             Strategic/ perspective/development plan etc</h2>
-        <input type="text" id="vac" name="vac" required>
+        <textarea id="ib" name="ib" rows="4" required></textarea>
 
-        <label for="add2">Upload Additional information </label><br>
-        <input type="file" id="add2" name="add2">
+        <label for="add37">Upload Additional information </label><br>
+        <input type="file" id="add37" name="add37">
 
-        <label for="link2">Provide link for additional information </label><br>
-        <input type="text" id="link2" name="link2">
+        <label for="link11">Provide link for additional information </label><br>
+        <input type="text" id="link11" name="link11">
 
-        <!-- Section 2.1.1 - Name and Address of the College -->
+       
         <h3>6.2.2 Implementation of e-governance in areas of operation
             1.Administration
             2.Finance and Accounts
             3.Student Admission and Support
             4.Examination</h3>
-        <input type="text" id="intern" name="intern" required>
+        <input type="text" id="ieg" name="ieg" required>
 
-        <label for="add3"link3>Upload supporting document </label><br>
-        <input type="file" id="add3" name="add3">
+        <label for="add38"link3>Upload supporting document </label><br>
+        <input type="file" id="add38" name="add38">
 
         <label for="instdata2">Institutional data in the prescribed format </label><br>
-        <input type="file" id="instdata2" name="instdata2">
+        <input type="file" id="instdata22" name="instdata22">
 
 
-        <button formaction="currenrich.html">Submit</button>
+        <button name="submit23">Submit</button>
+    </form>
     </div>
 </body>
 </html>
