@@ -282,6 +282,106 @@ if (isset($_POST['submit8']))
                        }
                    }
 
+if (isset($_POST['submit9']))
+                        {     $gr= $_POST['gr'];  
+                              $gr1= $_POST['gr1'];  
+                              $gr2= $_POST['gr2'];  
+                              $gr3= $_POST['gr3'];  
+                              $gr4= $_POST['gr4'];  
+                              $gr5= $_POST['gr5'];
+                                  
+
+                        
+                       if (isset($_FILES['add13']['name'])&&isset($_FILES['instdata7']['name']))
+                       {
+                         $file_name = $_FILES['add13']['name'];
+                            $file_tmp = $_FILES['add13']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+                            $fil_name = $_FILES['instdata7']['name'];
+                            $fil_tmp = $_FILES['instdata7']['tmp_name'];
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+
+                       $insertquery = 
+                            "INSERT INTO research(gr,gr21_22,gr20_21,gr19_20,gr18_19,gr17_18,supp_doc,inst_data) VALUES('$gr','$gr1','$gr2','$gr3','$gr4','$gr5',$file_name','$fil_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:3.2.php");
+                           };          
+                       }
+                   }                   
+
+if (isset($_POST['submit10']))
+                        {      $ie = $_POST['ie'];
+                               $link6=$_POST['link6'];
+                               $now=$_POST['now'];
+                               $now21_22=$_POST['now21_22'];
+                               $now20_21=$_POST['now20_21'];
+                               $now19_20=$_POST['now19_20'];
+                               $now18_19=$_POST['now18_19'];
+                               $now17_18=$_POST['now17_18'];
+                                                        
+                        if (isset($_FILES['add14']['name'])&&isset($_FILES['add15']['name'])&&isset($_FILES['instdata8']['name'])) 
+                        { 
+                       
+                            $file_name = $_FILES['add14']['name'];
+                            $file_tmp = $_FILES['add14']['tmp_name'];
+                            
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+                            $fil_name = $_FILES['add15']['name'];
+                            $fil_tmp = $_FILES['add15']['tmp_name'];
+                            
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+                            $fi_name = $_FILES['instdata8']['name'];
+                            $fi_tmp = $_FILES['instdata8']['tmp_name'];
+                            
+                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+                            $insertquery = 
+                            "INSERT INTO innovation(eco,additional,link,now,now21_22,now20_21,now19_20,now18_19,now17_18,supp_doc,inst_data) VALUES('$ie','$file_name','$link6','$now','$now21_22','$now20_21','$now19_20','$now18_19','$now17_18','$fil_name','$fi_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:3.3.php");
+                           };     
+                          }
+                         }
+
+if (isset($_POST['submit11']))
+                        {      $rp = $_POST['rp'];
+                               $rp21_22=$_POST['rp21_22'];
+                               $rp20_21=$_POST['rp20_21'];
+                               $rp19_20=$_POST['rp19_20'];
+                               $rp18_19=$_POST['rp18_19'];
+                               $rp17_18=$_POST['rp17_18'];
+                               $link7=$_POST['link7'];
+                               $nbc=$_POST['nbc'];
+                               $nbc1=$_POST['nbc1'];
+                               $nbc2=$_POST['nbc2'];
+                               $nbc3=$_POST['nbc3'];
+                               $nbc4=$_POST['nbc4'];
+                               $nbc5=$_POST['nbc5'];
+                               
+                                                        
+                        if (isset($_FILES['add16']['name'])&&isset($_FILES['add17']['name'])&&isset($_FILES['instdata9']['name'])) 
+                        { 
+                       
+                            $file_name = $_FILES['add16']['name'];
+                            $file_tmp = $_FILES['add16']['tmp_name'];
+                            
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+                            $fil_name = $_FILES['add17']['name'];
+                            $fil_tmp = $_FILES['add17']['tmp_name'];
+                            
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+                            $fi_name = $_FILES['instdata9']['name'];
+                            $fi_tmp = $_FILES['instdata9']['tmp_name'];
+                            
+                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+                            $insertquery = 
+                            "INSERT INTO res_publi(rp,rp21_22,rp20_21,rp19_20,rp18_19,rp17_18,additional,link,nbc,nbc21_22,nbc20_21,nbc19_20,nbc18_19,nbc17_18,addi,inst_data) VALUES('$rp','$rp21_22','$rp20_21','$rp19_20','$rp18_19','$rp17_18','$file_name','$link7','$nbc','$nbc1','$nbc2','$nbc3','$nbc4','$nbc5','$fil_name','$fi_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:3.4.php");
+                           };     
+                          }
+                         }
+
+
 ?> 
                     
                          
