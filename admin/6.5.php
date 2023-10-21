@@ -42,6 +42,7 @@
 </head>
 <body>
     <div class="form-container">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <h1>6.5 Internal Quality Assurance System</h1>
 
         <!-- Section 2.1 - BASIC INFORMATION -->
@@ -49,13 +50,13 @@
             quality assurance strategies and processes. It reviews teaching learning process, structures &
             methodologies of operations and learning outcomes at periodic intervals and records the incremental
             improvement in various activities</h2>
-        <input type="text" id="vac" name="vac" required>
+        <textarea id="iqac" name="iqac" required></textarea>
 
-        <label for="add2">Upload Additional information </label><br>
-        <input type="file" id="add2" name="add2">
+        <label for="add43">Upload Additional information </label><br>
+        <input type="file" id="add43" name="add43">
 
-        <label for="link2">Provide link for additional information </label><br>
-        <input type="text" id="link2" name="link2">
+        <label for="link13">Provide link for additional information </label><br>
+        <input type="text" id="link13" name="link2">
 
         <!-- Section 2.1.1 - Name and Address of the College -->
         <h3>6.5.2 Quality assurance initiatives of the institution include:
@@ -66,16 +67,17 @@
             3.Participation in NIRF
             4.any other quality audit/accreditation recognized by state, national or international agencies
             such as NAAC, NBA, ISO Certification etc</h3>
-        <input type="text" id="intern" name="intern" required>
+        <input type="text" id="qa" name="qa" required>
 
-        <label for="add3"link3>Upload supporting document </label><br>
-        <input type="file" id="add3" name="add3">
+        <label for="add44">Upload supporting document </label><br>
+        <input type="file" id="add44" name="add44">
 
         <label for="instdata2">Institutional data in the prescribed format </label><br>
-        <input type="file" id="instdata2" name="instdata2">
+        <input type="file" id="instdata25" name="instdata25">
 
 
-        <button formaction="currenrich.html">Submit</button>
+        <button name="submit26">Submit</button>
+    </form>
     </div>
 </body>
 </html>

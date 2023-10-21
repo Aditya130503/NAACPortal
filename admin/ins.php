@@ -846,6 +846,32 @@ if (isset($_POST['submit25']))
                           }
                          }
 
+if (isset($_POST['submit26']))
+                        {      $iqac = $_POST['iqac'];
+                               $link13=$_POST['link13'];
+                               $qa = $_POST['qa'];                       
+                        if (isset($_FILES['add43']['name'])&&isset($_FILES['add44']['name'])&&isset($_FILES['instdata25']['name'])) 
+                        { 
+                       
+                            $file_name = $_FILES['add43']['name'];
+                            $file_tmp = $_FILES['add43']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
+                            $fil_name = $_FILES['add44']['name'];
+                            $fil_tmp = $_FILES['add44']['tmp_name'];
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+
+                            $fi_name = $_FILES['instdata25']['name'];
+                            $fi_tmp = $_FILES['instdata25']['tmp_name'];
+                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+
+                            $insertquery = 
+                            "INSERT INTO iqas(iqac,addi,link,qa,supp_doc,inst_data) VALUES('$iqac','$file_name','$link13','$qa','$fil_name','$fi_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:7.1.php");
+                           }; 
+                          }
+                         }
 
 
 ?> 
