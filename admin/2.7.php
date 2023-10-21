@@ -50,7 +50,7 @@
 
 
 
-        <button type="submit8">Next</button>
+        <button name="submit8">Next</button>
     </form>
     </div>
 </body>

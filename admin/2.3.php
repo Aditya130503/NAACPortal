@@ -38,7 +38,7 @@
 <body>
 
     <div class="form-container">
-        <h2>Teaching-Learning Process</h2>
+        <h2>2.3Teaching-Learning Process</h2>
         <form action="ins.php" method="post" enctype="multipart/form-data">
         
         <label for="tl">2.3.1 Student centric methods, such as experiential learning, participative learning and problem
@@ -52,7 +52,7 @@ solving methodologies are used for enhancing learning experiences using ICT tool
         <input type="text" id="link3" name="link3">
 
 
-        <button type="submit4">Next</button>
+        <button name="submit4">Next</button>
     </form>
     </div>
 </body>

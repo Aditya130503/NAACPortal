@@ -145,7 +145,7 @@ if (isset($_POST['submit3']))
                             
 
                        $insertquery = 
-                            "INSERT INTO teaching_learning_eval(ep,21_22,20_21,19_20,18_19,17_18,ss_2021_22,2020_21,2019_20,2018_19,2017_18,additional,inst_data,perc_seats_filled,rc_2021_2022,2020_2021,2019_2020,2018_2019,2017_2018,nos_21_22,nos_20_21,nos_19_20,nos_18_19,nos_17_18,supp_doc,nos_inst_data,s_t_ratio) VALUES('$ep',$sa','$sa1','$sa2','$sa3','$sa4','$ss','$ss1','$ss2','$ss3','$ss4','$file_name','fil_name','$sf','$rc','$rc1','$rc2','$rc3','$rc4','$nos','$nos1','$nos2','$nos3','$nos4','$fi_name','$f_name','$str')";
+                            "INSERT INTO teaching_learning_eval(ep,21_22,20_21,19_20,18_19,17_18,ss_2021_22,2020_21,2019_20,2018_19,2017_18,additional,inst_data,perc_seats_filled,rc_2021_2022,2020_2021,2019_2020,2018_2019,2017_2018,nos_21_22,nos_20_21,nos_19_20,nos_18_19,nos_17_18,supp_doc,nos_inst_data,s_t_ratio) VALUES('$ep','$sa','$sa1','$sa2','$sa3','$sa4','$ss','$ss1','$ss2','$ss3','$ss4','$file_name','fil_name','$sf','$rc','$rc1','$rc2','$rc3','$rc4','$nos','$nos1','$nos2','$nos3','$nos4','$fi_name','$f_name','$str')";
                            if(mysqli_query($conn, $insertquery)){
                                 header("location:2.3.php");
                            };          
@@ -258,7 +258,7 @@ if (isset($_POST['submit7']))
                             move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
 
                        $insertquery = 
-                            "INSERT INTO stud_perf_lear_out(poco,additional,link,ppsd,pass_21_22,pass_20_21,pass_19_20,pass_18_19,pass_17_18,appear_21_22,appear_20_21,appear_19_20,appear_18_19,appear_17_18,supp_doc,inst_data) VALUES('$splo','$file_name','$link5','$ppsd','$pass','$pass1','$pass2','$pass3','$pass4','$appear','$appear1','$appear2','$appear3','$appear4','$fil_name','$fi_name')";
+                            "INSERT INTO stud_perf_lear_out(poco,addi,link,ppsd,pass21_22,pass20_21,pass19_20,pass18_19,pass17_18,appear21_22,appear20_21,appear19_20,appear18_19,appear17_18,supp_doc,inst_data) VALUES('$splo','$file_name','$link5','$ppsd','$pass','$pass1','$pass2','$pass3','$pass4','$appear','$appear1','$appear2','$appear3','$appear4','$fil_name','$fi_name')";
                            if(mysqli_query($conn, $insertquery)){
                                 header("location:2.7.php");
                            };          
@@ -289,12 +289,10 @@ if (isset($_POST['submit9']))
                               $gr3= $_POST['gr3'];  
                               $gr4= $_POST['gr4'];  
                               $gr5= $_POST['gr5'];
-                                  
-
-                        
+       
                        if (isset($_FILES['add13']['name'])&&isset($_FILES['instdata7']['name']))
                        {
-                         $file_name = $_FILES['add13']['name'];
+                            $file_name = $_FILES['add13']['name'];
                             $file_tmp = $_FILES['add13']['tmp_name'];
                             move_uploaded_file($file_tmp,"./pdf/".$file_name);
                             $fil_name = $_FILES['instdata7']['name'];
@@ -302,7 +300,7 @@ if (isset($_POST['submit9']))
                             move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
 
                        $insertquery = 
-                            "INSERT INTO research(gr,gr21_22,gr20_21,gr19_20,gr18_19,gr17_18,supp_doc,inst_data) VALUES('$gr','$gr1','$gr2','$gr3','$gr4','$gr5',$file_name','$fil_name')";
+                            "INSERT INTO research(gr,gr21_22,gr20_21,gr19_20,gr18_19,gr17_18,supp_doc,inst_data) VALUES('$gr','$gr1','$gr2','$gr3','$gr4','$gr5','$file_name','$fil_name')";
                            if(mysqli_query($conn, $insertquery)){
                                 header("location:3.2.php");
                            };          
@@ -391,24 +389,19 @@ if (isset($_POST['submit12']))
                                $nep3 = $_POST['nep3'];
                                $nep4 = $_POST['nep4'];
                                $nep5 = $_POST['nep5'];
-                               
-                        
-                               
-                                                        
+                                                  
                         if (isset($_FILES['add18']['name'])&&isset($_FILES['add19']['name'])&&isset($_FILES['instdata10']['name'])) 
                         { 
                        
                             $file_name = $_FILES['add18']['name'];
                             $file_tmp = $_FILES['add18']['tmp_name'];
-                            
                             move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
                             $fil_name = $_FILES['add19']['name'];
-                            $fil_tmp = $_FILES['add19']['tmp_name'];
+                            $fil_tmp = $_FILES['add19']['tmp_name'];move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
                             
-                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
                             $fi_name = $_FILES['instdata10']['name'];
                             $fi_tmp = $_FILES['instdata10']['tmp_name'];
-                            
                             move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
                             $insertquery = 
                             "INSERT INTO extension(ea,nrp,addi,link,nep,nep21_22,nep20_21,nep19_20,nep18_19,nep17_18,supp_doc,inst_data) VALUES('$ea','$nrp','$file_name','$link8','$nep','$nep1','$nep2','$nep3','$nep4','$nep5','$fil_name','$fi_name')";
@@ -604,7 +597,7 @@ if (isset($_POST['submit18']))
 
 
                             $insertquery = 
-                            "INSERT INTO maintain_it(sbsf,sbsf21_22,sbsf20_21,sbsf19_20,sbsf18_19,sbsf17_18,supp_doc,inst_data,cbse,cbse_supp_doc,cbse_inst_data,sbgc,sbgc21_22,sbgc20_21,sbgc19_20,sbgc18_19,sbgc17_18,sbgc_supp_doc,sbgc_inst_data,tm,tm_supp_doc) VALUES('$sbsf','$sbsf1','$sbsf2','$sbsf3','$sbsf4','$sbsf5','$file_name','$fil_name','$cbse','$fi_name','$f_name','$sbgc','$sbgc1','$sbgc2','$sbgc3','$sbgc4','$sbgc5','$p_name','$pd_name','$tm','$pdf_name')";
+                            "INSERT INTO stud_supp(sbsf,sbsf21_22,sbsf20_21,sbsf19_20,sbsf18_19,sbsf17_18,supp_doc,inst_data,cbse,cbse_supp_doc,cbse_inst_data,sbgc,sbgc21_22,sbgc20_21,sbgc19_20,sbgc18_19,sbgc17_18,sbgc_supp_doc,sbgc_inst_data,tm,tm_supp_doc) VALUES('$sbsf','$sbsf1','$sbsf2','$sbsf3','$sbsf4','$sbsf5','$file_name','$fil_name','$cbse','$fi_name','$f_name','$sbgc','$sbgc1','$sbgc2','$sbgc3','$sbgc4','$sbgc5','$p_name','$pd_name','$tm','$pdf_name')";
                            if(mysqli_query($conn, $insertquery)){
                                 header("location:5.2.php");
                            }; 
@@ -797,7 +790,7 @@ if (isset($_POST['submit24']))
                                $nts5=$_POST['nts5'];
                                
                                                                    
-                        if (isset($_FILES['add37']['name'])&&isset($_FILES['add38']['name'])&&isset($_FILES['instdata22']['name'])) 
+                        if (isset($_FILES['add39']['name'])&&isset($_FILES['add40']['name'])&&isset($_FILES['instdata23']['name'])&&isset($_FILES['add41']['name'])&&isset($_FILES['instdata24']['name'])) 
                         { 
                        
                             $file_name = $_FILES['add39']['name'];
@@ -846,7 +839,7 @@ if (isset($_POST['submit25']))
                           }
                          }
 
-if (isset($_POST['submit27']))
+if (isset($_POST['submit26']))
                         {      $iqac = $_POST['iqac'];
                                $link13=$_POST['link13'];
                                $qa = $_POST['qa'];                       
@@ -863,6 +856,41 @@ if (isset($_POST['submit27']))
 
                             $fi_name = $_FILES['instdata25']['name'];
                             $fi_tmp = $_FILES['instdata25']['tmp_name'];
+                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+
+                            $insertquery = 
+                            "INSERT INTO iqas(iqac,addi,link,qa,supp_doc,inst_data) VALUES('$iqac','$file_name','$link13','$qa','$fil_name','$fi_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:7.1.php");
+                           }; 
+                          }
+                         }
+
+if (isset($_POST['submit27']))
+                        {      $ge = $_POST['ge'];
+                               $link14=$_POST['link14'];
+                               $faci = $_POST['faci'];
+                               $qae = $_POST['qae'];
+                               $vrd = $_POST['vrd'];
+                               $link15=$_POST['link15'];
+
+                        if (isset($_FILES['add45']['name'])&&isset($_FILES['add46']['name'])&&isset($_FILES['add47']['name'])&&isset($_FILES['add48']['name'])) 
+                        { 
+                       
+                            $file_name = $_FILES['add45']['name'];
+                            $file_tmp = $_FILES['add45']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
+                            $fil_name = $_FILES['add46']['name'];
+                            $fil_tmp = $_FILES['add46']['tmp_name'];
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+
+                            $fi_name = $_FILES['add47']['name'];
+                            $fi_tmp = $_FILES['add47']['tmp_name'];
+                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+
+                            $f_name = $_FILES['add48']['name'];
+                            $f_tmp = $_FILES['add48']['tmp_name'];
                             move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
 
                             $insertquery = 

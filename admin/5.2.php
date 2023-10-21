@@ -175,10 +175,10 @@
    <br> <br>
 
    
-         <label for="add31">Upload supporting document </label><br>
+         <label for="add32">Upload supporting document </label><br>
           <input type="file" id="add32" name="add32">
 
-           <label for="instdata17">Institutional data in the prescribed format </label><br>
+           <label for="instdata18">Institutional data in the prescribed format </label><br>
            <input type="file" id="instdata18" name="instdata18">
 
          <button name="submit19">Submit</button>

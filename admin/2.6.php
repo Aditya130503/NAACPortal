@@ -98,7 +98,7 @@ the last five years
     
             <label for="instdata6">Institutional data in the prescribed format </label><br>
             <input type="file" id="instdata6" name="instdata6">
-        <button type="submit7">Next</button>
+        <button name="submit7">Next</button>
     </form>
     </div>
 </body>

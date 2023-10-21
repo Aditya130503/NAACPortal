@@ -40,7 +40,7 @@
     <div class="form-container">
         <h1>3.4 Extension Activities</h1>
         
-        <form action="ins.php" method="post" enctype="multipart">
+        <form action="ins.php" method="post" enctype="multipart/form-data">
         <!-- Section 1.1 - Introduction -->
         <label for="ea">3.4.1 Extension activities are carried out in the neighborhood community, sensitizing students to
 social issues, for their holistic development, and impact thereof during the last five years</label>
@@ -94,7 +94,7 @@ wise during the last five yearss
 
 
 
-        <button type="submit" name="submit12">Next</button>
+        <button name="submit12">Next</button>
     </form>
     </div>
 </body>
