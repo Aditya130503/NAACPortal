@@ -74,7 +74,7 @@
    </script> 
   </head>
   <body>
-    <form onsubmit="fun()">
+    <form method="post" enctype="multipart/form-data" onsubmit="fun()">
       <h1>Admin Login</h1>
       <div class="formcontainer">
       
