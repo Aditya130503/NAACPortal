@@ -846,7 +846,7 @@ if (isset($_POST['submit25']))
                           }
                          }
 
-if (isset($_POST['submit26']))
+if (isset($_POST['submit27']))
                         {      $iqac = $_POST['iqac'];
                                $link13=$_POST['link13'];
                                $qa = $_POST['qa'];                       
