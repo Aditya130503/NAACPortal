@@ -1,61 +1,55 @@
 <?php
-require('fpdf.php');
-$pdf = new FPDF();
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+
+// Include the TCPDF library
+require('tcpdf/tcpdf.php');
+
+// Initialize the PDF object
+$pdf = new TCPDF();
 $pdf->AddPage();
 
-include('include/conn.php');
+// Set some properties (optional)
+$pdf->SetFont('helvetica', '', 12);
+$pdf->SetAutoPageBreak(true, 10);
 
-$query1 = "SELECT * FROM table1"; // Update with the actual table name
+// Connect to your database using your 'conn.php' script
+include('conn.php');
+
+// Assuming you have multiple tables, you can perform queries for each table
+$query1 = "SELECT * FROM acad_flex"; // Update with the actual table name
 $result1 = mysqli_query($conn, $query1);
 
-$query2 = "SELECT * FROM table2"; // Update with the actual table name
+$query2 = "SELECT * FROM alumnimng"; // Update with the actual table name
 $result2 = mysqli_query($conn, $query2);
 
-// Create a table for data from the first table
-$pdf->SetFont('Arial', 'B', 14);
-$pdf->Cell(0, 10, 'Table 1 Data', 0, 1);
-$pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(30, 10, 'Column 1', 1);
-$pdf->Cell(30, 10, 'Column 2', 1);
-$pdf->Ln(); // Move to the next line
+// Create a function to add data from a result set to a table
+function addTableData($pdf, $result) {
+    $pdf->AddPage();
 
-// Iterate through the results of the first query and add data to the table
-while ($row = mysqli_fetch_assoc($result1)) {
-    $pdf->Cell(30, 10, $row['column1'], 1);
-    $pdf->Cell(30, 10, $row['column2'], 1);
-    $pdf->Ln();
+    $html = '<table border="1">';
+    while ($row = mysqli_fetch_assoc($result)) {
+        $html .= '<tr>';
+        foreach ($row as $value) {
+            $html .= '<td>' . $value . '</td>';
+        }
+        $html .= '</tr>';
+    }
+    $html .= '</table>';
+
+    $pdf->writeHTML($html, true, false, true, false, '');
 }
 
-// Add a page break for data from the second table
-$pdf->AddPage();
+// Add data from the first table to the PDF
+addTableData($pdf, $result1);
 
-// Create a table for data from the second table
-$pdf->SetFont('Arial', 'B', 14);
-$pdf->Cell(0, 10, 'Table 2 Data', 0, 1);
-$pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(30, 10, 'Column A', 1);
-$pdf->Cell(30, 10, 'Column B', 1);
-$pdf->Ln(); // Move to the next line
-
-// Iterate through the results of the second query and add data to the table
-while ($row = mysqli_fetch_assoc($result2)) {
-    $pdf->Cell(30, 10, $row['columnA'], 1);
-    $pdf->Cell(30, 10, $row['columnB'], 1);
-    $pdf->Ln();
-}
-
+// Add data from the second table to the PDF
+addTableData($pdf, $result2);
+ob_end_clean();
 // Output the PDF
-$pdf->Output();
+$pdf->Output('generated_pdf.pdf', 'I');
 
 // Close the database connection
 mysqli_close($conn);
 ?>
 
-<html>
-<head>
-<title>USER</title>
-</head>
-<body>
-<h1>NAAC REPORT</h1>
-</body>
-</head>
+
