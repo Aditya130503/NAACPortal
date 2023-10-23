@@ -3,7 +3,7 @@
     include('style.css');
 ?>
 <html lang="en">
-<head>k
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Information Form</title>
