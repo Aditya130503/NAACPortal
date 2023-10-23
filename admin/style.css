@@ -2,6 +2,7 @@
         /* Add your custom CSS styles here */
         body {
             font-family: Arial, sans-serif;
+
         }
         .form-container {
             max-width: 600px;
@@ -26,5 +27,6 @@
             border: none;
             margin: 0 auto; 
             display: block;
+            background-color: beige;
         }
     </style>
