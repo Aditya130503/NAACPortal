@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #successMessage {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 100px auto;
+            max-width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function countdownRedirect() {
+            var seconds = 7;
+            var countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                countdownElement.innerHTML = seconds + " seconds";
+                seconds--;
+
+                if (seconds < 0) {
+                    window.location.href = 'adminhome.html';
+                } else {
+                    setTimeout(updateCountdown, 1000);
+                }
+            }
+
+            updateCountdown();
+        }
+    </script>
+</head>
+<body onload="countdownRedirect()">
+    <div id="successMessage">
+        <h1>Success!</h1>
+        <p>Redirecting to home in <br><span id="countdown">7 seconds</span></p>
+    </div>
+</body>
+</html>

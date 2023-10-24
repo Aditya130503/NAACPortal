@@ -1,6 +1,5 @@
 <?php
-include('conn.php');
-require('tcpdf/tcpdf.php');
+
 
 // Initialize the PDF object
 $pdf = new TCPDF();
@@ -36,12 +35,4 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     $pdf->writeHTML($html, true, false, true, false, '');
 }
 
-
-addDataToPDF($pdf, $conn, 'eval_data', 'additional_info', 'additional_info');
-ob_end_clean();
-// Output the PDF
-$pdf->Output('generated_pdf.pdf', 'I');
-
-// Close the database connection
-mysqli_close($conn);
 ?>

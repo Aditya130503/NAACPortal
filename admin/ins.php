@@ -891,15 +891,61 @@ if (isset($_POST['submit27']))
 
                             $f_name = $_FILES['add48']['name'];
                             $f_tmp = $_FILES['add48']['tmp_name'];
-                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+                            move_uploaded_file($f_tmp,"./pdf/".$f_name);
 
                             $insertquery = 
-                            "INSERT INTO iqas(iqac,addi,link,qa,supp_doc,inst_data) VALUES('$iqac','$file_name','$link13','$qa','$fil_name','$fi_name')";
+                            "INSERT INTO inst_values(meas_ini,addi,link,asa,supp_doc,qa,qasupp_doc,ie,additional,link2) VALUES('$ge','$file_name','$link14','$faci','$fil_name','$qae','$fi_name','$vrd','$f_name','$link15')";
                            if(mysqli_query($conn, $insertquery)){
-                                header("location:7.1.php");
+                                header("location:7.2.php");
                            }; 
                           }
                          }
+
+if (isset($_POST['submit28']))
+                        {      $bp = $_POST['bp'];
+                              
+                        if (isset($_FILES['add49']['name'])&&isset($_FILES['add50']['name'])) 
+                        { 
+                       
+                            $file_name = $_FILES['add49']['name'];
+                            $file_tmp = $_FILES['add49']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
+                            $fil_name = $_FILES['add50']['name'];
+                            $fil_tmp = $_FILES['add50']['tmp_name'];
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+
+                            $insertquery = 
+                            "INSERT INTO best_prac(bp,supp_doc,inst_data) VALUES('$bp','$file_name','$fil_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:7.3.php");
+                           }; 
+                          }
+                         }
+
+
+if (isset($_POST['submit29']))
+                        {      $perf = $_POST['perf'];
+                              
+                        if (isset($_FILES['add51']['name'])&&isset($_FILES['add52']['name'])) 
+                        { 
+                       
+                            $file_name = $_FILES['add51']['name'];
+                            $file_tmp = $_FILES['add51']['tmp_name'];
+                            move_uploaded_file($file_tmp,"./pdf/".$file_name);
+
+                            $fil_name = $_FILES['add52']['name'];
+                            $fil_tmp = $_FILES['add52']['tmp_name'];
+                            move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
+
+                            $insertquery = 
+                            "INSERT INTO inst_dist(perf,supp_doc,inst_data) VALUES('$perf','$file_name','$fil_name')";
+                           if(mysqli_query($conn, $insertquery)){
+                                header("location:success.html");
+                           }; 
+                          }
+                         }
+
 
 
 ?> 

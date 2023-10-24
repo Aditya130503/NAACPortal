@@ -79,7 +79,7 @@
         <h2>Welcome to the ECS Department NAAC Portal</h2>
         <p>Explore our portal and access the relevant information.</p>
         <a class="button" href="admin/admin.php">Admin Login</a>
-        <a class="button" href="user/user.php">Viewer Page</a>
+        <a class="button" href="user/user.html">Viewer Page</a>
     </div>
     <nav class="year-navbar">
         <h3>Previous Year Ratings</h3>

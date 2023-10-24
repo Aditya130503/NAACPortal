@@ -48,7 +48,7 @@
         <h2>7.1.1 Measures initiated by the Institution for the promotion of gender equity and Institutional
          initiatives to celebrate / organize national and international commemorative days, events and
          festivals during the last five years</h2>
-        <input type="text" id="ge" name="ge" required>
+        <textarea id="ge" name="ge" required></textarea>
 
         <label for="add45">Upload Additional information </label><br>
         <input type="file" id="add45" name="add45">

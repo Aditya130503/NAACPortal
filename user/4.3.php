@@ -1,8 +1,8 @@
 <?php
 include('conn.php');
 require('tcpdf/tcpdf.php');
+//include('fetch.php');
 
-// Initialize the PDF object
 $pdf = new TCPDF();
 $pdf->AddPage();
 
@@ -22,9 +22,11 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {
-            if ($column == $fileColumn) {
+            
+            if ($column == $fileColumn || $column == $linkColumn  ) {
                 $filePath = '../admin/pdf/' . $value; // Assuming the files are stored in the 'pdf' directory
                 $html .= '<td><a href="' . $filePath . '" target="_blank">Download/View</a></td>';
+                
             } else {
                 $html .= '<td>' . $value . '</td>';
             }
@@ -37,7 +39,7 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
 }
 
 
-addDataToPDF($pdf, $conn, 'eval_data', 'additional_info', 'additional_info');
+addDataToPDF($pdf, $conn, 'it_infra', 'addi', 'supp_doc');
 ob_end_clean();
 // Output the PDF
 $pdf->Output('generated_pdf.pdf', 'I');
