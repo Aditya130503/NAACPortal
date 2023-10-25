@@ -7,7 +7,10 @@
     <style>
      
         body {
+            background-image: url(crce.jpg);
             background-repeat: no-repeat;
+            background-position-y: 80px;
+            background-size: cover;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -31,9 +34,8 @@
             text-decoration: none;
         }
         .container {
-            background-image: url(crce.jpg);
+            
             background-repeat: no-repeat;
-
             padding: 20px;
         }
         .button {
@@ -50,7 +52,6 @@
             margin-bottom: 0;
         }
 
-        /* Style for the year navbar */
         .year-navbar {        
            
             text-align: center;
@@ -61,9 +62,6 @@
 
     </style>
     
-    <script>
-        
-    </script>
 </head>
 <body>
     <header>
@@ -75,7 +73,7 @@
         <a href="#">AIDS</a>
         <a href="#">ECS</a>
     </nav>
-    <div class="container">
+    <div class="container" align="center">
         <h2>Welcome to the ECS Department NAAC Portal</h2>
         <p>Explore our portal and access the relevant information.</p>
         <a class="button" href="admin/admin.php">Admin Login</a>
@@ -86,7 +84,7 @@
         <a href="1819.html">2018-19</a>
         <a href="1920.html">2019-20</a>
         <a href="2021.html">2020-21</a>
-        <a href="2122.html">2021-22</a>
+        <a href="2022.pdf">2021-22</a>
     </nav>
 </body>
 </html>

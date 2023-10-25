@@ -1,23 +1,26 @@
 <?php
-session_start(); 
-if (isset($_SESSION['uname'])&&isset($_SESSION['psw'])) {
-    header('Location: adminhome.php');
-}
+include('conn.php');
+session_start();
 
-// Process the login form
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (/* Authentication is successful */) {
-        $_SESSION['user_id'] = /* User ID */;
-        // Redirect to the dashboard or another page
-        header('Location: dashboard.php');
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the input values from the form
+    $username = $_POST['uname'];
+    $password = $_POST['psw'];
+
+    // Check if the provided credentials match the stored values
+    if ($username === "Admin" && $password === "Admin@123") {
+        echo "Login successful.";
+        // You can set a session or perform other user-related tasks here
+        $_SESSION['loggedin'] = true;
+        // Redirect the user to a protected page (e.g., admin.php)
+        header("Location: adminhome.html");
+        exit();
     } else {
-        // Display an error message or redirect to the login page
+       
     }
+} else {
+    // Handle form submission error here
+    
 }
 ?>
-
-
-
-
-
-

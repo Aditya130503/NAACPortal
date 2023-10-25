@@ -24,14 +24,12 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  
   display: block;
   transition: 0.3s;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+
 
 .sidenav .closebtn {
   position: absolute;
@@ -79,14 +77,54 @@ article1 {
   .sidenav a {font-size: 18px;}
 }
 </style>
+
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+</script>
+
 </head>
 <body>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="1.1.php">Data Entry</a>
-  <a href="#">Add Activities</a>
-  <a href="#">Log Out</a>
+
+  
+  <div class="dropdown">
+    <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown"><a>Data Entry
+    </a></button>    <ul class="dropdown-menu">
+      <li> <a href="1.1.php">1.1</a>
+        <li><a href="1.2.php">1.2</a>
+        <li><a href="1.3.php">1.3</a>
+        <li><a href="1.4.php">1.4</a>
+          <li><a href="2.3.php">2.3</a>
+        <li><a href="2.4.php">2.4</a>
+        <li><a href="2.5.php">2.5</a>
+        <li><a href="2.6.php">2.6</a>
+        <li><a href="2.7.php">2.7</a>
+        <li> <a href="3.1.php">3.1</a>
+        <li><a href="3.2.php">3.2</a>
+        <li><a href="3.3.php">3.3</a>
+        <li><a href="3.4.php">3.4</a>
+        <li><a href="3.5.php">3.5</a>
+        <li> <a href="5.1.php">5.1</a>
+        <li><a href="5.2.php">5.2</a>
+        <li><a href="5.3.php">5.3</a>
+        <li><a href="5.4.php">5.4</a>
+        <li> <a href="6.1.php">6.1</a>
+        <li><a href="6.2.php">6.2</a>
+        <li><a href="6.3.php">6.3</a>
+        <li><a href="6.4.php">6.4</a>
+        <li><a href="6.5.php">6.5</a>
+        <li> <a href="7.1.php">7.1</a>
+        <li><a href="7.2.php">7.2</a>
+        <li><a href="7.3.php">7.3</a>  
+    </ul>
+  </div>
+
+  
+  <a href="../index.php">Log Out</a>
 </div>
 <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Admin Panel</span>
 

@@ -2,8 +2,9 @@
         /* Add your custom CSS styles here */
         body {
             font-family: Arial, sans-serif;
-            border: 1px solid #000
-            margin:0; 
+            background-color: #9FA8DA;
+            border: 2px solid black;
+            margin:10; 
             padding: 0;
 
         }

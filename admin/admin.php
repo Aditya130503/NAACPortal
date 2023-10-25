@@ -1,6 +1,9 @@
 
 <?php
       include'conn.php';
+      //include'log.php';
+      include'session.php';
+      
 ?>
 <html>
   <head>
@@ -58,30 +61,39 @@
       float: none;
       }
     </style>
-   <script>
-     function fun(){
-      var name=document.getElementById('uname').value;
-      var pw=document.getElementById('psw').value;
-      if (name==="user"&&pw==="123"){
-       // alert("hi");
-        window.open('adminhome.html');
-      }
-      else{alert("wrong");}
-
-     }
+   
 
    </script> 
   </head>
   <body>
-    <form method="post" enctype="multipart/form-data" onsubmit="fun()">
+    <form method="post" enctype="multipart/form-data" >
+
       <h1>Admin Login</h1>
       <div class="formcontainer">
       
       <div class="container">
         <label for="uname"><strong>Username</strong></label>
-        <input type="text" placeholder="Enter Username" id="uname" required>
+        <input type="text" placeholder="Enter Username" id="uname" name="uname" onkeyup="showHint(this.value)" required>
+        <p>Suggestions: <span id="txtHint"></span></p>
+        <script>
+function showHint(str) {
+  var xhttp;
+  if (str.length == 0) { 
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "gethint.php?uname="+str, true);
+  xhttp.send();
+}
+</script>
         <label for="psw"><strong>Password</strong></label>
-        <input type="password" placeholder="Enter Password" id="psw" required>
+        <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
       </div>
       <button type="submit">Login</button>
       </div>
