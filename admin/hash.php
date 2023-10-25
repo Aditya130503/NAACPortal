@@ -9,7 +9,7 @@ $stmt = $pdo->query($sql);
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $username = $row['username'];
     $plainTextPassword = $row['password'];
-    $hashedPassword = password_hash($plainTextPassword, PASSWORD_BCRYPT);
+    $hashedPassword = md5($plainTextPassword, PASSWORD_BCRYPT);
 
     // Update the password in the database
     $updateSql = "UPDATE users SET password = :password WHERE username = :username";
