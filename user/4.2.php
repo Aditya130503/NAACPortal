@@ -19,6 +19,11 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>4.2.1 Library is automated using Integrated Library Management System (ILMS), subscription to e-resources, amount spent on purchase of books, journals and per day usage of library</th>';
+    $html .= '<th>Upload supporting document</th>'; 
+    $html .= '<th>Institutional data in the prescribed format</th>';
+    $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

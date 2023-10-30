@@ -19,6 +19,19 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>2.6.1 Programme Outcomes (POs) and Course Outcomes (COs) for all Programmes offered by the
+    institution are stated and displayed on website and attainment of POs and COs are evaluated</th>';
+    $html .= '<th>Upload Additional information</th>'; 
+    $html .= '<th>Provide Link for Additional information</th>';
+    $html .= '<th>2.6.2 Pass percentage of Students during last five year</th>';
+    $html .= '<th>2.6.2.1 Number of final year students who passed the university examination year wise during the
+    last five years</th>'; 
+    $html .= '<th>2.6.2.2 Number of final year students who appeared for the university examination year-wise during
+    the last five years</th>'; 
+    $html .= '<th>Upload supporting document</th>';
+    $html .= '<th>Provide Link for Additional information</th>';
+    $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

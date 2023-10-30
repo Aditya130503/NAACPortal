@@ -20,6 +20,21 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th> 5.3.1 Number of awards/medals for outstanding performance in sports/ cultural activities at
+    University / state/ national / international level (award for a team event should be counted as one)
+    during the last five years</th>';
+    $html .= '<th> 5.3.1.1 Number of awards/medals for outstanding performance in sports/cultural activities atnational/international level (award for a team event should be counted as one) year wise during the last
+    five years</th>'; 
+    $html .= '<th>Upload supporting document</th>';
+    $html .= '<th>Institutional data in the prescribed format </th>';
+    $html .= '<th>5.3.2 Average number of sports and cultural programs in which students of the Institution
+    participated during last five years (organised by the institution/other institutions)</th>'; 
+    $html .= '<th>5.3.2.1 Number of sports and cultural programs in which students of the Institution participated
+    year wise during last five years</th>'; 
+    $html .= '<th>Upload supporting document</th>';
+    $html .= '<th>Institutional data in the prescribed format</th>';
+    $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

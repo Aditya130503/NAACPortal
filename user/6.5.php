@@ -20,6 +20,25 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>6.5.1 Internal Quality Assurance Cell (IQAC) has contributed significantly for institutionalizing the
+    quality assurance strategies and processes. It reviews teaching learning process, structures &
+    methodologies of operations and learning outcomes at periodic intervals and records the incremental
+    improvement in various activities</th>';
+    $html .= '<th>Upload Additional information</th>'; 
+    $html .= '<th>Provide link for additional information</th>';
+    $html .= '<th>6.5.2 Quality assurance initiatives of the institution include:
+    1.Regular meeting of Internal Quality Assurance Cell (IQAC); Feedback collected, analysed
+    and used for improvements
+    2.Collaborative quality initiatives with other institution(s)/ membership of international
+    networks
+    3.Participation in NIRF
+    4.any other quality audit/accreditation recognized by state, national or international agencies
+    such as NAAC, NBA, ISO Certification etc</th>';
+    $html .= '<th>Upload supporting document</th>'; 
+    $html .= '<th>Institutional data in the prescribed format</th>'; 
+    
+    $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

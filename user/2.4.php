@@ -19,6 +19,19 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>2.4.1 Percentage of full-time teachers against sanctioned posts during the last five years</th>';
+    $html .= '<th>2.4.1.1 Number of Sanctioned posts / required positions for teaching staff/ full time teachers year
+    wise during the last five years:</th>'; 
+    $html .= '<th>Upload supporting document</th>';
+    $html .= '<th>>2.4.2 Percentage of full time teachers with NET/SET/SLET/ Ph. D. / D.M. / M.Ch. / D.N.B
+    Superspeciality / D.Sc. / D.Litt. during the last five years (consider only highest degree for count)</th>';
+    $html .= '<th>2.4.2.1 Number of full time teachers with NET/SET/SLET/Ph. D. / D.M. / M.Ch. / D.N.B
+    Superspeciality / D.Sc. / D.Litt. year wise during the last five yearsanctioned seats year wise during last five years
+    </th>'; 
+    $html .= '<th>Upload supporting document</th>'; 
+    $html .= '<th>Institutional data in the prescribed format</th>';
+    $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

@@ -20,6 +20,27 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>6.3.1 The institution has effective welfare measures and Performance Appraisal System for teaching
+    and non-teaching staff</th>';
+    $html .= '<th>Upload Additional information </th>'; 
+    $html .= '<th>6.3.2 Percentage of teachers provided with financial support to attend conferences/workshops and
+    towards membership fee of professional bodies during the last five years</th>';
+    $html .= '<th>6.3.2.1 Number of teachers provided with financial support to attend conferences/workshops and
+    towards membership fee of professional bodies year wise during the last five years</th>';
+    $html .= '<th>Upload supporting document</th>'; 
+    $html .= '<th>Institutional data in the prescribed format </th>'; 
+    $html .= '<th>6.3.3 Percentage of teaching and non-teaching staff participating in Faculty development
+    Programmes (FDP), professional development /administrative training programs during the last five
+    years</th>';
+    $html .= '<th>6.3.3.1 Total number of teaching and non-teaching staff participating in Faculty development
+    Programmes (FDP), professional development /administrative training programs during the last five
+    years</th>';
+    $html .= '<th>6.3.3.2 Number of non-teaching staff year wise during the last five years</th>';
+    $html .= '<th>Upload supporting document</th>';
+    $html .= '<th>Institutional data in the prescribed format</th>'; 
+    $html .= '</tr>';
+    
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

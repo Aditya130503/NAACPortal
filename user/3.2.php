@@ -19,6 +19,19 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>3.2.1 Institution has created an ecosystem for innovations and has initiatives for creation and
+    transfer of knowledge</th>';
+    $html .= '<th>Upload Additional information</th>'; 
+    $html .= '<th>Provide Link for Additional information</th>';
+    $html .= '<th>3.2.2 Number of workshops/seminars/conferences including on Research Methodology, Intellectual
+    Property Rights (IPR) and entrepreneurship conducted during the last five years</th>';
+    $html .= '<th>3.2.2.1 Total number of workshops/seminars/conferences including programs conducted on
+    Research Methodology, Intellectual Property Rights (IPR) and entrepreneurship year wise during
+    last five years</th>'; 
+    $html .= '<th>Upload supporting document</th>'; 
+    $html .= '<th>Institutional data in the prescribed format </th>';
+    $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

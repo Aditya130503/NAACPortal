@@ -24,7 +24,7 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $html .= '<th>1.3.2.1 Number of students undertaking project work/field work / internships</th>'; // Replace with your actual heading
     $html .= '</tr>';
     // Generate the table and document links
-    $html = '<table border="1">';
+  
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

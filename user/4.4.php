@@ -20,6 +20,15 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>4.4.1 Percentage of expenditure incurred on maintenance of infrastructure (physical and academic
+    support facilities) excluding salary component during the last five years (INR in Lakhs)</th>';
+    $html .= '<th>4.4.1.1 Expenditure incurred on maintenance of infrastructure (physical facilities and academic
+    support facilities) excluding salary component year wise during the last five years (INR in lakhs)</th>'; 
+    $html .= '<th>Upload supporting document</th>';
+    $html .= '<th>Institutional data in the prescribed format</th>';
+    $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {
