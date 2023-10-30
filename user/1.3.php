@@ -16,7 +16,13 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     // Query the database
     $query = "SELECT * FROM $table";
     $result = mysqli_query($conn, $query);
-    
+    $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>1.3.1 Institution integrates crosscutting issues relevant to Professional Ethics, Gender, Human
+    Values, Environment and Sustainability into the Curriculum</th>'; // Replace with your actual heading
+    $html .= '<th>1.3.2 Percentage of students undertaking project work/field work/ internships (Data for the latest completed academic year)</th>'; // Replace with your actual heading
+    $html .= '<th>1.3.2.1 Number of students undertaking project work/field work / internships</th>'; // Replace with your actual heading
+    $html .= '</tr>';
     // Generate the table and document links
     $html = '<table border="1">';
     while ($row = mysqli_fetch_assoc($result)) {
