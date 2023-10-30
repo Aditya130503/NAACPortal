@@ -77,16 +77,16 @@ if (isset($_POST['submit1']))
                             $file_name = $_FILES['add2']['name'];
                             $file_tmp = $_FILES['add2']['tmp_name'];
                             move_uploaded_file($file_tmp,"./pdf/".$file_name);
-                            $file_name='1.3 '.$file_name;
+                            $file_name='1.3_'.$file_name;
                             
                             $fi_name = $_FILES['add3']['name'];
                             $fi_tmp = $_FILES['add3']['tmp_name'];
                             move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
-                            $fi_name='1.3 '.$fi_name;
+                            $fi_name='1.3_'.$fi_name;
                             $f_name = $_FILES['instdata2']['name'];
                             $f_tmp = $_FILES['instdata2']['tmp_name'];
                             move_uploaded_file($f_tmp,"./pdf/".$f_name);
-                            $f_name='1.3 '.$f_name;
+                            $f_name='1.3_'.$f_name;
                            
                             $insertquery = 
                             "INSERT INTO Ethics(pec,additionalInfo,link,percentage_student,No_stud,supp_doc,inst_data) VALUES('$pec','$file_name','$link2','$intern','$intern1','$fi_name','$f_name')";
@@ -104,8 +104,9 @@ if (isset($_POST['submit2']))
                        {
                          $file_name = $_FILES['add3']['name'];
                             $file_tmp = $_FILES['add3']['tmp_name'];
+                            $file_name='1.4_'.$file_name;
                             move_uploaded_file($file_tmp,"./pdf/".$file_name);
-$file_name='1.4 '.$file_name;
+
                        $insertquery = 
                             "INSERT INTO feedback(fb,supp_doc) VALUES('$fb','$file_name')";
                            if(mysqli_query($conn, $insertquery)){

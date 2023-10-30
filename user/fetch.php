@@ -13,7 +13,7 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
