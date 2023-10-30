@@ -9,9 +9,9 @@ include('conn.php');
                         // If the ‘pdf_file’ field has an attachment
                             $file_name = $_FILES['pdf_file']['name'];
                             $file_tmp = $_FILES['pdf_file']['tmp_name'];
-                            
+                            $file_name='1.1_'.$file_name;
                             move_uploaded_file($file_tmp,"./pdf/".$file_name);
-                            $file_name='1.1 '.$file_name;
+                            
                             $insertquery = 
                             "INSERT INTO eval_data(curricular_planning,additional_info,link) VALUES('$curricularPlanning','$file_name','$link')";
                            if(mysqli_query($conn, $insertquery)){
@@ -36,20 +36,24 @@ if (isset($_POST['sub']))
                         // If the ‘pdf_file’ field has an attachment
                             $file_name = $_FILES['supp']['name'];
                             $file_tmp = $_FILES['supp']['tmp_name'];
+                            $file_name='1.2_'.$file_name;
                             move_uploaded_file($file_tmp,"./pdf/".$file_name);
-                            $file_name='1.2 '.$file_name;
+                            
                             $fil_name = $_FILES['instdata']['name'];
                             $fil_tmp = $_FILES['instdata']['tmp_name'];
+                            $fil_name='1.2_'.$fil_name;
                             move_uploaded_file($fil_tmp,"./pdf/".$fil_name);
-                            $fil_name='1.2 '.$fil_name;
+                            
                             $fi_name = $_FILES['supp1']['name'];
                             $fi_tmp = $_FILES['supp1']['tmp_name'];
-                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
                             $fi_name='1.2 '.$fi_name;
+                            move_uploaded_file($fi_tmp,"./pdf/".$fi_name);
+                            
                             $f_name = $_FILES['instdata1']['name'];
                             $f_tmp = $_FILES['instdata1']['tmp_name'];
+                            $f_name='1.2_'.$f_name;
                             move_uploaded_file($f_tmp,"./pdf/".$f_name);
-                            $f_name='1.2 '.$f_name;
+                            
                            
                             $insertquery = 
                             "INSERT INTO acad_flex(Add_on_certi,supp_doc,inst_data,percentage_student,No_stud_2022_23,2021_22,2020_21,2019_20,2018_19,no_supp_doc,no_inst_data) VALUES('$vac','$file_name','$fil_name','$pvac','$twotwo','$twoone','$zeroone','$onenine','$oneeight','$fi_name','$f_name')";

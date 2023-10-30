@@ -14,11 +14,27 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>Heading 1</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 2</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 3</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 4</th>';
+    $html .= '<th>Heading 5</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 6</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 7</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 8</th>';
+    $html .= '<th>Heading 9</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 10</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 11</th>'; // Replace with your actual heading
+    $html .= '<th>Heading 12</th>'; // Replace with your actual heading
+    $html .= '</tr>';
+    
+
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {
