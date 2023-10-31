@@ -15,27 +15,28 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>3.4.1 Extension activities are carried out in the neighborhood community, sensitizing students to
+    $html .= '<th>Sr. No</th>';
+    $html .= '<th>Extension activities in the neighborhood community, sensitizing students to
     social issues, for their holistic development, and impact thereof during the last five years</th>';
-    $html .= '<th>3.3.1.1 Number of research papers in the Journals notified on UGC CARE year wise during the last
+    $html .= '<th>No. of research papers in the Journals notified on UGC CARE year wise during the last
     five years</th>'; 
-    $html .= '<th>Upload Additional information</th>';
-    $html .= '<th>Provide Link for Additional information</th>';
-    $html .= '<th>3.4.3 Number of extension and outreach programs conducted by the institution through
-    NSS/NCC/Red cross/YRC etc., (including the programmes such as Swachh Bharat, AIDS awareness,
-    Gender issues etc. and/or those organised in collaboration with industry, community and NGOs)
-    during the last five years</th>'; 
-    $html .= '<th>3.4.3.1 Number of extension and outreach Programs conducted in collaboration with industry,
-    community, and Non- Government Organizations through NSS/ NCC/ Red Cross/ YRC etc., year
-    wise during the last five yearss</th>'; 
-    $html .= '<th>Upload supporting document</th>';
-    $html .= '<th>Institutional data in the prescribed format</th>';
+    $html .= '<th>Additional</th>';
+    $html .= '<th>Link</th>';
+    $html .= '<th>No. of extension and outreach programs conducted by the institution through
+    NSS/NCC/Red cross/YRC etc.</th>'; 
+    $html .= '<th>No. of extension and outreach Programs conducted through NSS/ NCC/ Red Cross/ YRC etc.21-22</th>'; 
+     $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document</th>';
+    $html .= '<th>Institutional data</th>';
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';

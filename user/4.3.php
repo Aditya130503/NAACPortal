@@ -14,18 +14,18 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>4.3.1 Institution frequently updates its IT facilities and provides sufficient bandwidth for internet
-    connection
+    $html .= '<th>Sr.No</th>';
+    $html .= '<th>Institution frequently updates its IT facilities and provides sufficient bandwidth for internet connection
     </th>';
-    $html .= '<th>Upload Additional information </th>'; 
-    $html .= '<th>4.3.2 Student – Computer ratio (Data for the latest completed academic year)</th>';
-    $html .= '<th>4.3.2.1 Number of computers available for students usage during the latest completed academic
+    $html .= '<th>Additional </th>';
+    $html .= '<th>Student–Computer ratio (Latest completed academic year)</th>';
+    $html .= '<th>Number of computers available for students usage during the latest completed academic
     year:</th>';
     $html .= '<th>Upload supporting document</th>'; 
     $html .= '</tr>';

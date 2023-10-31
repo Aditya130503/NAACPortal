@@ -15,18 +15,22 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>3.1.1 Grants received from Government and non-governmental agencies for research projects /
-    endowments in the institution during the last five years (INR in Lakhs)</th>';
-    $html .= '<th>3.1.1.1 Total Grants from Government and non-governmental agencies for research projects ,
-    endowments, Chairs in the institution during the last five years (INR in Lakhs)</th>'; 
-    $html .= '<th>Upload supporting document</th>';
-    $html .= '<th>Institutional data in the prescribed format</th>';
+     $html .= '<th>Sr.No.</th>';    
+    $html .= '<th>Grants received  for research projects/    endowments for five years (INR in Lakhs)</th>';
+    $html .= '<th>Grants for research projects ,
+    endowments(INR in Lakhs)21-22</th>';
+     $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>'; 
+    $html .= '<th>Document</th>';
+    $html .= '<th>Institutional data</th>';
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';

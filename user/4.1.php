@@ -15,21 +15,24 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>4.1.1 Availability of adequate infrastructure and physical facilities viz., classrooms, laboratories, ICT
-    facilities, cultural activities, gymnasium, yoga centre etc. in the institution</th>'; 
-    $html .= '<th>Upload Additional information</th>';
-    $html .= '<th>>4.1.2 Percentage of expenditure, excluding salary for infrastructure augmentation during last five
-    years (INR in Lakhs)</th>';
-    $html .= '<th>4.1.2.1 Expenditure for infrastructure augmentation, excluding salary during the last five years (INR
-    in lakhs)</th>'; 
-    $html .= '<th>Upload supporting document</th>'; 
-    $html .= '<th>Institutional data in the prescribed format</th>';
+     $html .= '<th>Sr.no</th>';
+    $html .= '<th>Availability of adequate infrastructure and physical facilities viz., classrooms, laboratories, ICT facilities,cultural activities, gymnasium, yoga centre etc.</th>'; 
+    $html .= '<th>Additional</th>';
+    $html .= '<th>% of expenditure, excluding salary for infrastructure augmentation(INR in Lakhs)</th>';
+    $html .= '<th>Expenditure for infrastructure augmentation, excluding salary for infrastructure augmentation(INR in Lakhs)for last 5 years</th>';
+     $html .= '<th>Expenditure for infrastructure augmentation, excluding salary for infrastructure augmentation(INR in Lakhs)21-22</th>';
+    $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>'; 
+    $html .= '<th>Document</th>'; 
+    $html .= '<th>Institutional data</th>';
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';

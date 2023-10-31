@@ -14,23 +14,30 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>2.4.1 Percentage of full-time teachers against sanctioned posts during the last five years</th>';
-    $html .= '<th>2.4.1.1 Number of Sanctioned posts / required positions for teaching staff/ full time teachers year
-    wise during the last five years:</th>'; 
-    $html .= '<th>Upload supporting document</th>';
-    $html .= '<th>>2.4.2 Percentage of full time teachers with NET/SET/SLET/ Ph. D. / D.M. / M.Ch. / D.N.B
-    Superspeciality / D.Sc. / D.Litt. during the last five years (consider only highest degree for count)</th>';
-    $html .= '<th>2.4.2.1 Number of full time teachers with NET/SET/SLET/Ph. D. / D.M. / M.Ch. / D.N.B
-    Superspeciality / D.Sc. / D.Litt. year wise during the last five yearsanctioned seats year wise during last five years
-    </th>'; 
-    $html .= '<th>Upload supporting document</th>'; 
-    $html .= '<th>Institutional data in the prescribed format</th>';
+    $html .= '<th>Sr no.</th>';
+    $html .= '<th>Percentage of full-time teachers against sanctioned posts</th>';
+    $html .= '<th>No. of Sanctioned posts / required positions for teaching staff/ full time teachers 21-22</th>'; 
+    $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document</th>';
+    $html .= '<th>%full time teachers with NET/SET/SLET/ Ph. D. / D.M. / M.Ch. / D.N.B
+    Superspeciality / D.Sc. / D.Litt.</th>';
+     $html .= '<th>%full time teachers with NET/SET/SLET/ Ph. D. / D.M. / M.Ch. / D.N.B
+    Superspeciality / D.Sc. / D.Litt. 21-22</th>';
+    $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>'; 
+    $html .= '<th>Document</th>'; 
+    $html .= '<th>Institutional data</th>';
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';

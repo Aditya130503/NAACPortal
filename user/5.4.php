@@ -15,12 +15,13 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>5.4.1 There is a registered Alumni Association that contributes significantly to the development of
+     $html .= '<th>Sr. No.</th>';
+    $html .= '<th>There is a registered Alumni Association that contributes significantly to the development of
     the institution through financial and/or other support services</th>';
     $html .= '<th>Upload supporting document</th>'; 
     $html .= '<th>Institutional data in the prescribed format </th>';

@@ -13,7 +13,7 @@
     <div class="form-container">
         <h1>Quality Indicator Framework</h1>
         <label style="font-size: large;">Criterion 1 - Curricular Aspects</label>        
-/* form action
+
         <form action="ins.php" method="post" enctype="multipart/form-data">
         
         <label for="cur">1.1 Curricular Planning and Implementation</label>

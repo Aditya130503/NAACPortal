@@ -15,30 +15,39 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>6.3.1 The institution has effective welfare measures and Performance Appraisal System for teaching
-    and non-teaching staff</th>';
-    $html .= '<th>Upload Additional information </th>'; 
-    $html .= '<th>6.3.2 Percentage of teachers provided with financial support to attend conferences/workshops and
-    towards membership fee of professional bodies during the last five years</th>';
-    $html .= '<th>6.3.2.1 Number of teachers provided with financial support to attend conferences/workshops and
-    towards membership fee of professional bodies year wise during the last five years</th>';
-    $html .= '<th>Upload supporting document</th>'; 
-    $html .= '<th>Institutional data in the prescribed format </th>'; 
-    $html .= '<th>6.3.3 Percentage of teaching and non-teaching staff participating in Faculty development
-    Programmes (FDP), professional development /administrative training programs during the last five
+    $html .= '<th>Sr.No</th>';
+    $html .= '<th>The institution has effective welfare measures and Performance Appraisal System for teaching and non-teaching staff</th>';
+    $html .= '<th>Additional </th>';
+    $html .= '<th>% teachers provided with financial support to attend conferences/workshops and
+    towards membership fee of professional bodies during the last 5 years</th>';
+    $html .= '<th>No.of teachers provided with financial support to attend conferences/workshops and
+    towards membership fee of professional bodies21-22</th>';
+    $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document</th>'; 
+    $html .= '<th>Institutional data</th>'; 
+    $html .= '<th>%teaching and non-teaching staff participating in FDP, professional development /administrative training programs during the last 5
     years</th>';
-    $html .= '<th>6.3.3.1 Total number of teaching and non-teaching staff participating in Faculty development
-    Programmes (FDP), professional development /administrative training programs during the last five
-    years</th>';
-    $html .= '<th>6.3.3.2 Number of non-teaching staff year wise during the last five years</th>';
-    $html .= '<th>Upload supporting document</th>';
-    $html .= '<th>Institutional data in the prescribed format</th>'; 
+    $html .= '<th>Total no. of teaching and non-teaching staff participating in FDP, professional development /administrative training programs 21-22</th>';
+     $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>No. of non-teaching staff year wise 21-22</th>';
+     $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document</th>';
+    $html .= '<th>Institutional data</th>'; 
     $html .= '</tr>';
     
     while ($row = mysqli_fetch_assoc($result)) {

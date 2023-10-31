@@ -14,28 +14,25 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>2.1.1.1 Number of students admitted year wise during last five years</th>'; // Replace with your actual heading
-    $html .= '<th>2.1.1.2 Number of sanctioned seats year wise during last five years
+    $html .= '<th>No. of students admitted year wise</th>'; // Replace with your actual heading
+    $html .= '<th>No of sanctioned seats year wise
                </th>'; // Replace with your actual heading
-    $html .= '<th>Upload supporting document</th>'; // Replace with your actual heading
-    $html .= '<th>Institutional data in the prescribed format</th>';
-    $html .= '<th>2.1.2 Percentage of seats filled against seats reserved for various categories (SC, ST, OBC,
-    Divyangjan, etc. as per applicable reservation policy during the last five years (Exclusive of
-    supernumerary seats)</th>'; // Replace with your actual heading
-    $html .= '<th>2.1.2.1 Number of actual students admitted from the reserved categories year - wise during the last five
+    $html .= '<th>Document</th>'; // Replace with your actual heading
+    $html .= '<th>Institutional data </th>';
+    $html .= '<th>Percentage of seats filled against seats reserved for various categories</th>'; // Replace with your actual heading
+    $html .= '<th>No. of actual students admitted from the reserved categories year - wise during the last five
     years</th>'; // Replace with your actual heading
-    $html .= '<th>2.1.2.2 Number of seats earmarked for reserved category as per GOI/ State Govt rule year wise
-    during the last five years</th>'; // Replace with your actual heading
-    $html .= '<th>Upload supporting document </th>';
-    $html .= '<th>Institutional data in the prescribed format</th>'; // Replace with your actual heading
-    $html .= '<th>2.2.1 Student – Full time Teacher Ratio
-    (Data for the latest completed academic year</th>'; 
+    $html .= '<th>No. of seats earmarked for reserved category as per GOI/ State Govt rule year wise
+    </th>'; // Replace with your actual heading
+    $html .= '<th>supporting document </th>';
+    $html .= '<th>Institutional data</th>'; // Replace with your actual heading
+    $html .= '<th>Student–Full time Teacher Ratio</th>'; 
     $html .= '</tr>';
     // Replace with your actual heading
     while ($row = mysqli_fetch_assoc($result)) {

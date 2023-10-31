@@ -18,6 +18,11 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     
     // Generate the table and document links
     $html = '<table border="1">';
+    $html .= '<tr>';
+    $html .= '<th>Sr No.</th>';
+    $html .= '<th>Input</th>';
+    $html .= '<th>Document</th>';
+    $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
         foreach ($row as $column => $value) {

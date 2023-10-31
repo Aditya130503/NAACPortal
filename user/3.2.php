@@ -14,23 +14,26 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>3.2.1 Institution has created an ecosystem for innovations and has initiatives for creation and
+     $html .= '<th>Sr.No</th>';
+    $html .= '<th>Institution has created an ecosystem for innovations and has initiatives for creation and
     transfer of knowledge</th>';
-    $html .= '<th>Upload Additional information</th>'; 
-    $html .= '<th>Provide Link for Additional information</th>';
-    $html .= '<th>3.2.2 Number of workshops/seminars/conferences including on Research Methodology, Intellectual
-    Property Rights (IPR) and entrepreneurship conducted during the last five years</th>';
-    $html .= '<th>3.2.2.1 Total number of workshops/seminars/conferences including programs conducted on
-    Research Methodology, Intellectual Property Rights (IPR) and entrepreneurship year wise during
-    last five years</th>'; 
-    $html .= '<th>Upload supporting document</th>'; 
-    $html .= '<th>Institutional data in the prescribed format </th>';
+    $html .= '<th>Additional </th>';
+    $html .= '<th>Link</th>';
+    $html .= '<th>No. of workshops/seminars/conferences including on Research Methodology,IPR and entrepreneurship conducted for last five years</th>';
+    $html .= '<th>Total no. of workshops/seminars/conferences including programs conducted on
+    Research Methodology,IPR and entrepreneurship 21-22</th>'; 
+     $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document</th>'; 
+    $html .= '<th>Institutional data</th>';
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';

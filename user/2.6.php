@@ -14,23 +14,29 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
-    $html = '<table border="1">';
+    $html = '<table border="0.5">';
     $html .= '<tr>';
-    $html .= '<th>2.6.1 Programme Outcomes (POs) and Course Outcomes (COs) for all Programmes offered by the
-    institution are stated and displayed on website and attainment of POs and COs are evaluated</th>';
-    $html .= '<th>Upload Additional information</th>'; 
-    $html .= '<th>Provide Link for Additional information</th>';
-    $html .= '<th>2.6.2 Pass percentage of Students during last five year</th>';
-    $html .= '<th>2.6.2.1 Number of final year students who passed the university examination year wise during the
-    last five years</th>'; 
-    $html .= '<th>2.6.2.2 Number of final year students who appeared for the university examination year-wise during
-    the last five years</th>'; 
-    $html .= '<th>Upload supporting document</th>';
-    $html .= '<th>Provide Link for Additional information</th>';
+    $html .= '<th>Sr. No.</th>';
+    $html .= '<th>POs and COs for all Programmes offered by the institution are stated and displayed on website and attainment of POs and COs are evaluated</th>';
+    $html .= '<th>Additional</th>'; 
+    $html .= '<th>Link</th>';
+    $html .= '<th>Pass percentage of Students 2017-2022</th>';
+    $html .= '<th>No. of final year students passing university examination 21-22</th>'; 
+    $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>No. of final year students appearing for the university examination 21-22</th>'; 
+     $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document</th>';
+    $html .= '<th>Link</th>';
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';

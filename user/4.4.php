@@ -15,19 +15,24 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn){
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>4.4.1 Percentage of expenditure incurred on maintenance of infrastructure (physical and academic
-    support facilities) excluding salary component during the last five years (INR in Lakhs)</th>';
-    $html .= '<th>4.4.1.1 Expenditure incurred on maintenance of infrastructure (physical facilities and academic
-    support facilities) excluding salary component year wise during the last five years (INR in lakhs)</th>'; 
-    $html .= '<th>Upload supporting document</th>';
-    $html .= '<th>Institutional data in the prescribed format</th>';
+     $html .= '<th>Sr.No</th>';
+    $html .= '<th>% expenditure incurred on maintenance of infrastructure (physical and academic
+    support facilities)excluding salary component during the last five years (INR in Lakhs)</th>';
+    $html .= '<th>Expenditure incurred on maintenance of infrastructure (physical facilities and academic
+    support facilities)(INR in lakhs)21-22</th>';
+     $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document</th>';
+    $html .= '<th>Institutional data</th>';
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';

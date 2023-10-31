@@ -15,31 +15,45 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>5.2.1 Percentage of placement of outgoing students and students progressing to higher education
+    $html .= '<th>Sr.No</th>';
+    $html .= '<th>%placement of outgoing students and students progressing to higher education
     during the last five years</th>';
-    $html .= '<th>5.2.1.1 Number of outgoing students placed and / or progressed to higher education year wise during
-    the last five years</th>'; 
-    $html .= '<th>5.2.1.2 Number of outgoing students year wise during the last five years</th>';
-    $html .= '<th>Upload supporting document </th>';
-    $html .= '<th>Institutional data in the prescribed format </th>'; 
-    $html .= '<th>5.2.2 Percentage of students qualifying in state/national/ international level examinations during the
-    last five years (eg: JAM/CLAT/GATE/ GMAT/ CAT/ GRE/ TOEFL/ Civil Services/State
+    $html .= '<th>No. of outgoing students placed and / or progressed to higher education21-22</th>'; 
+    $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>No. of outgoing students 21-22</th>';
+    $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document </th>';
+    $html .= '<th>Institutional data</th>'; 
+    $html .= '<th>% students qualifying in state/national/ international level examinations for last five years (eg: JAM/CLAT/GATE/ GMAT/ CAT/ GRE/ TOEFL/ Civil Services/State
     government examinations)</th>'; 
-    $html .= '<th>5.2.2.1 Number of students qualifying in state/ national/ international level examinations (eg:
+    $html .= '<th>No. of students qualifying in state/ national/ international level examinations (eg:
         JAM/CLAT/NET/ SLET/ GATE/ GMAT/CAT/GRE/ TOEFL/ Civil Services/ Judicial Services/Public
-        Prosecution services/All India Bar Exams/State government examinations) year wise during last five
-        years</th>';
-    $html .= '<th>5.2.2.2 Number of students appearing in state/ national/ international level examinations (eg:
+        Prosecution services/All India Bar Exams/State government examinations)21-22</th>';
+        $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>No. of students appearing in state/ national/ international level examinations (eg:
     JAM/CLAT/NET/ SLET/ GATE/ GMAT/CAT,GRE/ TOFEL/ Civil Services/ State government
-    examinations) year wise during last five years</th>';
-    $html .= '<th>Upload supporting document </th>';
-    $html .= '<th>Institutional data in the prescribed format</th>';
+    examinations)21-22</th>';
+    $html .= '<th>20-21</th>';
+    $html .= '<th>19-20</th>';
+    $html .= '<th>18-19</th>';
+    $html .= '<th>17-18</th>';
+    $html .= '<th>Document </th>';
+    $html .= '<th>Institutional data</th>';
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';

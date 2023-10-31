@@ -15,24 +15,25 @@ function addDataToPDF($pdf, $conn, $table, $fileColumn, $linkColumn,$fileColumn2
     $pdf->AddPage();
     
     // Query the database
-    $query = "SELECT * FROM $table";
+    $query = "SELECT * FROM $table WHERE (SELECT MAX(id) FROM $table)=id";
     $result = mysqli_query($conn, $query);
     
     // Generate the table and document links
     $html = '<table border="1">';
     $html .= '<tr>';
-    $html .= '<th>6.2.1 The functioning of the institutional bodies is effective and efficient as visible from policies,
+     $html .= '<th>Sr. No.</th>';
+    $html .= '<th>The functioning of the institutional bodies is effective and efficient as visible from policies,
     administrative setup, appointment and service rules, procedures, deployment of institutional
     Strategic/ perspective/development plan etc</th>';
-    $html .= '<th>Upload Additional information</th>'; 
-    $html .= '<th>Provide link for additional information </th>';
-    $html .= '<th>6.2.2 Implementation of e-governance in areas of operation
+    $html .= '<th>Additional </th>';
+    $html .= '<th>link</th>';
+    $html .= '<th>Implementation of e-governance in areas of operation
     1.Administration
     2.Finance and Accounts
     3.Student Admission and Support
     4.Examination</th>';
-    $html .= '<th>Upload supporting documen</th>'; 
-    $html .= '<th>Institutional data in the prescribed format</th>'; 
+    $html .= '<th>Documen</th>'; 
+    $html .= '<th>Institutional data</th>'; 
     $html .= '</tr>';
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
