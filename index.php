@@ -74,8 +74,8 @@
         <a href="#">ECS</a>
     </nav>
     <div class="container" align="center">
-        <h2>Welcome to the ECS Department NAAC Portal</h2>
-        <p>Explore our portal and access the relevant information.</p>
+        <h2 style="color:#0099FF;">Welcome to the ECS Department NAAC Portal</h2>
+        <p style="color: red;" ><strong>Explore our portal and access the relevant information.</p></strong>
         <a class="button" href="admin/admin.php">Admin Login</a>
         <a class="button" href="user/user.html">Viewer Page</a>
     </div>
